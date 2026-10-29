@@ -1,14 +1,9 @@
-/* game.h e header
- TOTATE DECLARATIILE: CE EXISTA: cclass names, method names, variable naes
- 
- 
- => in game.cpp avem DEFINITIILE = logica efectiva*/
-
 #pragma once
 
 #include "GL/glew.h"
 #include "GLFW/glfw3.h"
 #include "glm/glm.hpp"
+#include "sprite_renderer.h" // Il includem pe noul nostru renderer!
 
 enum GameState {
     GAME_ACTIVE,
@@ -17,28 +12,27 @@ enum GameState {
 };
 
 class Game {
-    public:
+public:
     GameState State;
     bool Keys[1024];
     
     unsigned int Width, Height;
     Game(unsigned int width, unsigned int height);
     ~Game();
-    void Init();                    // setez totul o data la incept: shadere, vertez data, VAO,VBO,IBO, texture , tot ce se intampla in main inainte de while loop
-    void ProcessInput(float dt);    // verific ce taste apas si reactioneaza
-    void Update(float dt);          // calculeaza tot ce se schimba frame-to-frame ex: transform matrix glm::translate ..  
-    void Render();                  // dezeneaza 
+
+    void Init();                    // Incarca shaderele, textura si porneste renderer-ul
+    void ProcessInput(float dt);    // Misca pisica cu WASD si opreste la margini
+    void Update(float dt);          // Logica jocului
+    void Render();                  // Deseneaza pisica printr-un simplu DrawSprite!
     void OnScroll(double yoffSet);
 
-    private: //OPenGl obj - se creeaza o data in Init() si nu se schimba
-    GLuint vao, vbo, ibo;
+private:
     GLuint programID;
     GLuint texture;
+    SpriteRenderer* Renderer;       // Pointerul catre SpriteRenderer!
 
-    //Game obj state - datele care descriu obiectul(patratul) - se schimba frame-to-frame
+    // Datele pisicii tale:
     glm::vec3 squarePos;
-    float limit;
-    float zoomScale;
+    glm::vec2 squareSize;           // Latimea si inaltimea (inlocuieste zoomScale)
     float speed;
-    glm::mat4 trans;
 };

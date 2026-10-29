@@ -1,0 +1,4 @@
+/home/cris/Documents/PROJECT ECG/CatGame/build/CMakeFiles/ACG_Lab4.dir
+/home/cris/Documents/PROJECT ECG/CatGame/build/CMakeFiles/run.dir
+/home/cris/Documents/PROJECT ECG/CatGame/build/CMakeFiles/edit_cache.dir
+/home/cris/Documents/PROJECT ECG/CatGame/build/CMakeFiles/rebuild_cache.dir
