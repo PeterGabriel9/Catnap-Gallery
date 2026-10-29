@@ -1,0 +1,71 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug ACG_Lab4",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/Bin/ACG_Lab4",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/build/Bin",
+            "environment": [
+                {
+                    "name": "DISPLAY",
+                    "value": ":0"
+                },
+                {
+                    "name": "XDG_SESSION_TYPE",
+                    "value": "x11"
+                },
+                {
+                    "name": "WAYLAND_DISPLAY",
+                    "value": ""
+                }
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Allow loading symbols from all paths",
+                    "text": "set auto-load safe-path /",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "CMake Build",
+            "miDebuggerPath": "${workspaceFolder}/.vscode/gdb-wrapper.sh"
+        },
+        {
+            "name": "Run (no debugger)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/Bin/ACG_Lab4",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/build/Bin",
+            "environment": [
+                {
+                    "name": "DISPLAY",
+                    "value": ":0"
+                },
+                {
+                    "name": "XDG_SESSION_TYPE",
+                    "value": "x11"
+                },
+                {
+                    "name": "WAYLAND_DISPLAY",
+                    "value": ""
+                }
+            ],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "preLaunchTask": "CMake Build",
+            "miDebuggerPath": "${workspaceFolder}/.vscode/gdb-wrapper.sh"
+        }
+    ]
+}
