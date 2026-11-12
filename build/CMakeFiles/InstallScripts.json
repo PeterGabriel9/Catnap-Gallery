@@ -1,7 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"/home/cris/Documents/PROJECT ECG/CatGame/build/cmake_install.cmake"
+		"/home/cris/Documents/Catnap-Official/build/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

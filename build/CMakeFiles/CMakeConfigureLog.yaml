@@ -20,6 +20,8 @@ events:
     names:
       - "uname"
     candidate_directories:
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/sbin/"
@@ -30,12 +32,16 @@ events:
       - "/usr/local/games/"
       - "/snap/bin/"
     searched_directories:
+      - "/home/cris/.gemini/antigravity/bin/uname"
+      - "/home/cris/.config/Antigravity/bin/uname"
       - "/usr/local/sbin/uname"
       - "/usr/local/bin/uname"
       - "/usr/sbin/uname"
     found: "/usr/bin/uname"
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -74,6 +80,8 @@ events:
       - "make"
       - "smake"
     candidate_directories:
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/sbin/"
@@ -84,12 +92,16 @@ events:
       - "/usr/local/games/"
       - "/snap/bin/"
     searched_directories:
+      - "/home/cris/.gemini/antigravity/bin/gmake"
+      - "/home/cris/.config/Antigravity/bin/gmake"
       - "/usr/local/sbin/gmake"
       - "/usr/local/bin/gmake"
       - "/usr/sbin/gmake"
     found: "/usr/bin/gmake"
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -129,6 +141,8 @@ events:
       - "icx"
       - "clang++"
     candidate_directories:
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/sbin/"
@@ -139,12 +153,16 @@ events:
       - "/usr/local/games/"
       - "/snap/bin/"
     searched_directories:
+      - "/home/cris/.gemini/antigravity/bin/c++"
+      - "/home/cris/.config/Antigravity/bin/c++"
       - "/usr/local/sbin/c++"
       - "/usr/local/bin/c++"
       - "/usr/sbin/c++"
     found: "/usr/bin/c++"
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -182,6 +200,8 @@ events:
     found: "/usr/share/cmake-4.2/Modules/CMakeCXXCompilerId.cpp.in"
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -212,7 +232,7 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
       
       The CXX compiler identification is GNU, found in:
-        /home/cris/Documents/PROJECT ECG/CatGame/build/CMakeFiles/4.2.3/CompilerIdCXX/a.out
+        /home/cris/Documents/Catnap-Official/build/CMakeFiles/4.2.3/CompilerIdCXX/a.out
       
   -
     kind: "find-v1"
@@ -235,6 +255,8 @@ events:
       - "ar"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/sbin/"
@@ -246,6 +268,8 @@ events:
     found: "/usr/bin/ar"
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -277,6 +301,8 @@ events:
       - "ranlib"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/sbin/"
@@ -288,6 +314,8 @@ events:
     found: "/usr/bin/ranlib"
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -319,6 +347,8 @@ events:
       - "strip"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/sbin/"
@@ -330,6 +360,8 @@ events:
     found: "/usr/bin/strip"
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -361,6 +393,8 @@ events:
       - "ld"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/sbin/"
@@ -372,6 +406,8 @@ events:
     found: "/usr/bin/ld"
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -403,6 +439,8 @@ events:
       - "nm"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/sbin/"
@@ -414,6 +452,8 @@ events:
     found: "/usr/bin/nm"
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -445,6 +485,8 @@ events:
       - "objdump"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/sbin/"
@@ -456,6 +498,8 @@ events:
     found: "/usr/bin/objdump"
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -487,6 +531,8 @@ events:
       - "objcopy"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/sbin/"
@@ -498,6 +544,8 @@ events:
     found: "/usr/bin/objcopy"
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -529,6 +577,8 @@ events:
       - "readelf"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/sbin/"
@@ -540,6 +590,8 @@ events:
     found: "/usr/bin/readelf"
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -571,6 +623,8 @@ events:
       - "dlltool"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/sbin/"
@@ -581,6 +635,8 @@ events:
       - "/snap/bin/"
     searched_directories:
       - "/usr/bin/dlltool"
+      - "/home/cris/.gemini/antigravity/bin/dlltool"
+      - "/home/cris/.config/Antigravity/bin/dlltool"
       - "/usr/local/sbin/dlltool"
       - "/usr/local/bin/dlltool"
       - "/usr/sbin/dlltool"
@@ -592,6 +648,8 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -623,6 +681,8 @@ events:
       - "addr2line"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/sbin/"
@@ -634,6 +694,8 @@ events:
     found: "/usr/bin/addr2line"
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -665,6 +727,8 @@ events:
       - "tapi"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/sbin/"
@@ -675,6 +739,8 @@ events:
       - "/snap/bin/"
     searched_directories:
       - "/usr/bin/tapi"
+      - "/home/cris/.gemini/antigravity/bin/tapi"
+      - "/home/cris/.config/Antigravity/bin/tapi"
       - "/usr/local/sbin/tapi"
       - "/usr/local/bin/tapi"
       - "/usr/sbin/tapi"
@@ -686,6 +752,8 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -720,6 +788,8 @@ events:
       - "gcc-ar"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/sbin/"
@@ -730,6 +800,8 @@ events:
       - "/snap/bin/"
     searched_directories:
       - "/usr/bin/gcc-ar-15.2"
+      - "/home/cris/.gemini/antigravity/bin/gcc-ar-15.2"
+      - "/home/cris/.config/Antigravity/bin/gcc-ar-15.2"
       - "/usr/local/sbin/gcc-ar-15.2"
       - "/usr/local/bin/gcc-ar-15.2"
       - "/usr/sbin/gcc-ar-15.2"
@@ -741,6 +813,8 @@ events:
     found: "/usr/bin/gcc-ar-15"
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -775,6 +849,8 @@ events:
       - "gcc-ranlib"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/sbin/"
@@ -785,6 +861,8 @@ events:
       - "/snap/bin/"
     searched_directories:
       - "/usr/bin/gcc-ranlib-15.2"
+      - "/home/cris/.gemini/antigravity/bin/gcc-ranlib-15.2"
+      - "/home/cris/.config/Antigravity/bin/gcc-ranlib-15.2"
       - "/usr/local/sbin/gcc-ranlib-15.2"
       - "/usr/local/bin/gcc-ranlib-15.2"
       - "/usr/sbin/gcc-ranlib-15.2"
@@ -796,6 +874,8 @@ events:
     found: "/usr/bin/gcc-ranlib-15"
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -815,8 +895,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/home/cris/Documents/PROJECT ECG/CatGame/build/CMakeFiles/CMakeScratch/TryCompile-yKcPrH"
-      binary: "/home/cris/Documents/PROJECT ECG/CatGame/build/CMakeFiles/CMakeScratch/TryCompile-yKcPrH"
+      source: "/home/cris/Documents/Catnap-Official/build/CMakeFiles/CMakeScratch/TryCompile-5e36zo"
+      binary: "/home/cris/Documents/Catnap-Official/build/CMakeFiles/CMakeScratch/TryCompile-5e36zo"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -826,13 +906,13 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/cris/Documents/PROJECT ECG/CatGame/build/CMakeFiles/CMakeScratch/TryCompile-yKcPrH'
+        Change Dir: '/home/cris/Documents/Catnap-Official/build/CMakeFiles/CMakeScratch/TryCompile-5e36zo'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_efde4/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_efde4.dir/build.make CMakeFiles/cmTC_efde4.dir/build
-        gmake[1]: Entering directory '/home/cris/Documents/PROJECT ECG/CatGame/build/CMakeFiles/CMakeScratch/TryCompile-yKcPrH'
-        Building CXX object CMakeFiles/cmTC_efde4.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/c++   -v -o CMakeFiles/cmTC_efde4.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_30ec1/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_30ec1.dir/build.make CMakeFiles/cmTC_30ec1.dir/build
+        gmake[1]: Entering directory '/home/cris/Documents/Catnap-Official/build/CMakeFiles/CMakeScratch/TryCompile-5e36zo'
+        Building CXX object CMakeFiles/cmTC_30ec1.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -v -o CMakeFiles/cmTC_30ec1.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
@@ -842,8 +922,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 15.2.0 (Ubuntu 15.2.0-16ubuntu1) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_efde4.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_efde4.dir/'
-         /usr/libexec/gcc/x86_64-linux-gnu/15/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_efde4.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -fzero-init-padding-bits=all -Wbidi-chars=any -o /tmp/ccyAi50k.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_30ec1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_30ec1.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/15/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_30ec1.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -fzero-init-padding-bits=all -Wbidi-chars=any -o /tmp/cc7hybbf.s
         GNU C++17 (Ubuntu 15.2.0-16ubuntu1) version 15.2.0 (x86_64-linux-gnu)
         	compiled by GNU C version 15.2.0, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.3.1, isl version isl-0.27-GMP
         
@@ -864,14 +944,14 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: b661a74662ad7cf413c4193391ab5290
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_efde4.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_efde4.dir/'
-         /usr/bin/x86_64-linux-gnu-as -v --64 -o CMakeFiles/cmTC_efde4.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccyAi50k.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_30ec1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_30ec1.dir/'
+         /usr/bin/x86_64-linux-gnu-as -v --64 -o CMakeFiles/cmTC_30ec1.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc7hybbf.s
         GNU assembler version 2.46 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.46
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/15/:/usr/libexec/gcc/x86_64-linux-gnu/15/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/15/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/15/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_efde4.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_efde4.dir/CMakeCXXCompilerABI.cpp.'
-        Linking CXX executable cmTC_efde4
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_efde4.dir/link.txt --verbose=1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_30ec1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_30ec1.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_30ec1
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_30ec1.dir/link.txt --verbose=1
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/15/lto-wrapper
@@ -884,14 +964,14 @@ events:
         gcc version 15.2.0 (Ubuntu 15.2.0-16ubuntu1) 
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/15/:/usr/libexec/gcc/x86_64-linux-gnu/15/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/15/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/15/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_efde4' '-foffload-options=-l_GCC_stdc++' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_efde4.'
-         /usr/libexec/gcc/x86_64-linux-gnu/15/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/15/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/15/lto-wrapper -plugin-opt=-fresolution=/tmp/cciVMuKe.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_efde4 /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/15 -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/15/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_efde4.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_30ec1' '-foffload-options=-l_GCC_stdc++' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_30ec1.'
+         /usr/libexec/gcc/x86_64-linux-gnu/15/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/15/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/15/lto-wrapper -plugin-opt=-fresolution=/tmp/ccLBSBLP.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_30ec1 /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/15 -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/15/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_30ec1.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crtn.o
         collect2 version 15.2.0
-        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/15/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/15/lto-wrapper -plugin-opt=-fresolution=/tmp/cciVMuKe.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_efde4 /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/15 -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/15/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_efde4.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crtn.o
+        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/15/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/15/lto-wrapper -plugin-opt=-fresolution=/tmp/ccLBSBLP.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_30ec1 /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/15 -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/15/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_30ec1.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crtn.o
         GNU ld (GNU Binutils for Ubuntu) 2.46
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_efde4' '-foffload-options=-l_GCC_stdc++' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_efde4.'
-        /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_efde4.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_efde4
-        gmake[1]: Leaving directory '/home/cris/Documents/PROJECT ECG/CatGame/build/CMakeFiles/CMakeScratch/TryCompile-yKcPrH'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_30ec1' '-foffload-options=-l_GCC_stdc++' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_30ec1.'
+        /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_30ec1.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_30ec1
+        gmake[1]: Leaving directory '/home/cris/Documents/Catnap-Official/build/CMakeFiles/CMakeScratch/TryCompile-5e36zo'
         
       exitCode: 0
   -
@@ -932,13 +1012,13 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/home/cris/Documents/PROJECT ECG/CatGame/build/CMakeFiles/CMakeScratch/TryCompile-yKcPrH']
+        ignore line: [Change Dir: '/home/cris/Documents/Catnap-Official/build/CMakeFiles/CMakeScratch/TryCompile-5e36zo']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_efde4/fast]
-        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_efde4.dir/build.make CMakeFiles/cmTC_efde4.dir/build]
-        ignore line: [gmake[1]: Entering directory '/home/cris/Documents/PROJECT ECG/CatGame/build/CMakeFiles/CMakeScratch/TryCompile-yKcPrH']
-        ignore line: [Building CXX object CMakeFiles/cmTC_efde4.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_efde4.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_30ec1/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_30ec1.dir/build.make CMakeFiles/cmTC_30ec1.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/cris/Documents/Catnap-Official/build/CMakeFiles/CMakeScratch/TryCompile-5e36zo']
+        ignore line: [Building CXX object CMakeFiles/cmTC_30ec1.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_30ec1.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
@@ -948,8 +1028,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 15.2.0 (Ubuntu 15.2.0-16ubuntu1) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_efde4.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_efde4.dir/']
-        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/15/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_efde4.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -fzero-init-padding-bits=all -Wbidi-chars=any -o /tmp/ccyAi50k.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_30ec1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_30ec1.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/15/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_30ec1.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -fzero-init-padding-bits=all -Wbidi-chars=any -o /tmp/cc7hybbf.s]
         ignore line: [GNU C++17 (Ubuntu 15.2.0-16ubuntu1) version 15.2.0 (x86_64-linux-gnu)]
         ignore line: [	compiled by GNU C version 15.2.0  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.3.1  isl version isl-0.27-GMP]
         ignore line: []
@@ -970,14 +1050,14 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: b661a74662ad7cf413c4193391ab5290]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_efde4.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_efde4.dir/']
-        ignore line: [ /usr/bin/x86_64-linux-gnu-as -v --64 -o CMakeFiles/cmTC_efde4.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccyAi50k.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_30ec1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_30ec1.dir/']
+        ignore line: [ /usr/bin/x86_64-linux-gnu-as -v --64 -o CMakeFiles/cmTC_30ec1.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc7hybbf.s]
         ignore line: [GNU assembler version 2.46 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.46]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/15/:/usr/libexec/gcc/x86_64-linux-gnu/15/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/15/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/15/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_efde4.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_efde4.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [Linking CXX executable cmTC_efde4]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_efde4.dir/link.txt --verbose=1]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_30ec1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_30ec1.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_30ec1]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_30ec1.dir/link.txt --verbose=1]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/15/lto-wrapper]
@@ -990,13 +1070,13 @@ events:
         ignore line: [gcc version 15.2.0 (Ubuntu 15.2.0-16ubuntu1) ]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/15/:/usr/libexec/gcc/x86_64-linux-gnu/15/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/15/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/15/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/15/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_efde4' '-foffload-options=-l_GCC_stdc++' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_efde4.']
-        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/15/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/15/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/15/lto-wrapper -plugin-opt=-fresolution=/tmp/cciVMuKe.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_efde4 /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/15 -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/15/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_efde4.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_30ec1' '-foffload-options=-l_GCC_stdc++' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_30ec1.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/15/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/15/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/15/lto-wrapper -plugin-opt=-fresolution=/tmp/ccLBSBLP.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_30ec1 /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/15 -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/15/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_30ec1.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crtn.o]
           arg [/usr/libexec/gcc/x86_64-linux-gnu/15/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/libexec/gcc/x86_64-linux-gnu/15/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/15/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/cciVMuKe.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccLBSBLP.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -1014,7 +1094,7 @@ events:
           arg [-znow] ==> ignore
           arg [-zrelro] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_efde4] ==> ignore
+          arg [cmTC_30ec1] ==> ignore
           arg [/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crti.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o]
@@ -1029,7 +1109,7 @@ events:
           arg [-L/lib] ==> dir [/lib]
           arg [-L/usr/lib] ==> dir [/usr/lib]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_efde4.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_30ec1.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc_s] ==> lib [gcc_s]
@@ -1040,7 +1120,7 @@ events:
           arg [/usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crtn.o]
         ignore line: [collect2 version 15.2.0]
-        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/15/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/15/lto-wrapper -plugin-opt=-fresolution=/tmp/cciVMuKe.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_efde4 /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/15 -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/15/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_efde4.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/15/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/15/lto-wrapper -plugin-opt=-fresolution=/tmp/ccLBSBLP.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_30ec1 /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/15 -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/15/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_30ec1.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crtn.o]
         linker tool for 'CXX': /usr/bin/ld
         collapse obj [/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
         collapse obj [/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
@@ -1090,6 +1170,8 @@ events:
     names:
       - "GL/gl.h"
     candidate_directories:
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/sbin/"
@@ -1121,6 +1203,8 @@ events:
       - "/usr/openwin/share/include/"
       - "/opt/graphics/OpenGL/include/"
     searched_directories:
+      - "/home/cris/.gemini/antigravity/bin/GL/gl.h"
+      - "/home/cris/.config/Antigravity/bin/GL/gl.h"
       - "/usr/local/sbin/GL/gl.h"
       - "/usr/local/bin/GL/gl.h"
       - "/usr/sbin/GL/gl.h"
@@ -1137,6 +1221,8 @@ events:
     found: "/usr/include/"
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -1178,6 +1264,8 @@ events:
     names:
       - "GL/glx.h"
     candidate_directories:
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/sbin/"
@@ -1206,6 +1294,8 @@ events:
       - "/opt/"
       - "/usr/include/X11/"
     searched_directories:
+      - "/home/cris/.gemini/antigravity/bin/GL/glx.h"
+      - "/home/cris/.config/Antigravity/bin/GL/glx.h"
       - "/usr/local/sbin/GL/glx.h"
       - "/usr/local/bin/GL/glx.h"
       - "/usr/sbin/GL/glx.h"
@@ -1222,6 +1312,8 @@ events:
     found: "/usr/include/"
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -1263,6 +1355,8 @@ events:
     names:
       - "EGL/egl.h"
     candidate_directories:
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/sbin/"
@@ -1291,6 +1385,8 @@ events:
       - "/opt/"
       - "/usr/include/X11/"
     searched_directories:
+      - "/home/cris/.gemini/antigravity/bin/EGL/egl.h"
+      - "/home/cris/.config/Antigravity/bin/EGL/egl.h"
       - "/usr/local/sbin/EGL/egl.h"
       - "/usr/local/bin/EGL/egl.h"
       - "/usr/sbin/EGL/egl.h"
@@ -1307,6 +1403,8 @@ events:
     found: "/usr/include/"
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -1348,6 +1446,8 @@ events:
     names:
       - "GLES2/gl2.h"
     candidate_directories:
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/sbin/"
@@ -1376,6 +1476,8 @@ events:
       - "/opt/"
       - "/usr/include/X11/"
     searched_directories:
+      - "/home/cris/.gemini/antigravity/bin/GLES2/gl2.h"
+      - "/home/cris/.config/Antigravity/bin/GLES2/gl2.h"
       - "/usr/local/sbin/GLES2/gl2.h"
       - "/usr/local/bin/GLES2/gl2.h"
       - "/usr/sbin/GLES2/gl2.h"
@@ -1392,6 +1494,8 @@ events:
     found: "/usr/include/"
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -1433,6 +1537,8 @@ events:
     names:
       - "GLES3/gl3.h"
     candidate_directories:
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/sbin/"
@@ -1461,6 +1567,8 @@ events:
       - "/opt/"
       - "/usr/include/X11/"
     searched_directories:
+      - "/home/cris/.gemini/antigravity/bin/GLES3/gl3.h"
+      - "/home/cris/.config/Antigravity/bin/GLES3/gl3.h"
       - "/usr/local/sbin/GLES3/gl3.h"
       - "/usr/local/bin/GLES3/gl3.h"
       - "/usr/sbin/GLES3/gl3.h"
@@ -1477,6 +1585,8 @@ events:
     found: "/usr/include/"
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -1518,6 +1628,8 @@ events:
     names:
       - "GL/xmesa.h"
     candidate_directories:
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/sbin/"
@@ -1549,6 +1661,8 @@ events:
       - "/usr/openwin/share/include/"
       - "/opt/graphics/OpenGL/include/"
     searched_directories:
+      - "/home/cris/.gemini/antigravity/bin/GL/xmesa.h"
+      - "/home/cris/.config/Antigravity/bin/GL/xmesa.h"
       - "/usr/local/sbin/GL/xmesa.h"
       - "/usr/local/bin/GL/xmesa.h"
       - "/usr/sbin/GL/xmesa.h"
@@ -1582,6 +1696,8 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -1623,6 +1739,8 @@ events:
     names:
       - "GL/glu.h"
     candidate_directories:
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/sbin/"
@@ -1651,6 +1769,8 @@ events:
       - "/opt/"
       - "/usr/include/X11/"
     searched_directories:
+      - "/home/cris/.gemini/antigravity/bin/GL/glu.h"
+      - "/home/cris/.config/Antigravity/bin/GL/glu.h"
       - "/usr/local/sbin/GL/glu.h"
       - "/usr/local/bin/GL/glu.h"
       - "/usr/sbin/GL/glu.h"
@@ -1667,6 +1787,8 @@ events:
     found: "/usr/include/"
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -1708,6 +1830,8 @@ events:
     names:
       - "OpenGL"
     candidate_directories:
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/sbin/"
@@ -1736,6 +1860,8 @@ events:
       - "/opt/"
       - "/usr/lib/X11/"
     searched_directories:
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/sbin/"
@@ -1751,6 +1877,8 @@ events:
     found: "/usr/lib/x86_64-linux-gnu/libOpenGL.so"
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -1792,6 +1920,10 @@ events:
     names:
       - "GLX"
     candidate_directories:
+      - "/home/cris/.gemini/antigravity/bin/libglvnd/"
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/libglvnd/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/libglvnd/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/libglvnd/"
@@ -1847,6 +1979,10 @@ events:
       - "/usr/lib/X11/libglvnd/"
       - "/usr/lib/X11/"
     searched_directories:
+      - "/home/cris/.gemini/antigravity/bin/libglvnd/"
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/libglvnd/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/libglvnd/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/libglvnd/"
@@ -1875,6 +2011,8 @@ events:
     found: "/usr/lib/x86_64-linux-gnu/libGLX.so"
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -1916,6 +2054,10 @@ events:
     names:
       - "EGL"
     candidate_directories:
+      - "/home/cris/.gemini/antigravity/bin/libglvnd/"
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/libglvnd/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/libglvnd/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/libglvnd/"
@@ -1971,6 +2113,10 @@ events:
       - "/usr/lib/X11/libglvnd/"
       - "/usr/lib/X11/"
     searched_directories:
+      - "/home/cris/.gemini/antigravity/bin/libglvnd/"
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/libglvnd/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/libglvnd/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/libglvnd/"
@@ -1999,6 +2145,8 @@ events:
     found: "/usr/lib/x86_64-linux-gnu/libEGL.so"
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -2040,6 +2188,8 @@ events:
     names:
       - "GLESv2"
     candidate_directories:
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/sbin/"
@@ -2068,6 +2218,8 @@ events:
       - "/opt/"
       - "/usr/lib/X11/"
     searched_directories:
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/sbin/"
@@ -2083,6 +2235,8 @@ events:
     found: "/usr/lib/x86_64-linux-gnu/libGLESv2.so"
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -2125,6 +2279,8 @@ events:
       - "GLESv3"
       - "GLESv2"
     candidate_directories:
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/sbin/"
@@ -2153,6 +2309,8 @@ events:
       - "/opt/"
       - "/usr/lib/X11/"
     searched_directories:
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/sbin/"
@@ -2180,6 +2338,8 @@ events:
       - "/opt/lib/"
       - "/opt/"
       - "/usr/lib/X11/"
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/sbin/"
@@ -2195,6 +2355,8 @@ events:
     found: "/usr/lib/x86_64-linux-gnu/libGLESv2.so"
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -2237,6 +2399,8 @@ events:
       - "GLU"
       - "MesaGLU"
     candidate_directories:
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/sbin/"
@@ -2268,6 +2432,8 @@ events:
       - "/usr/openwin/lib/"
       - "/usr/shlib/"
     searched_directories:
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/sbin/"
@@ -2283,6 +2449,8 @@ events:
     found: "/usr/lib/x86_64-linux-gnu/libGLU.so"
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -2317,8 +2485,8 @@ events:
       - "/usr/lib/x86_64-linux-gnu/cmake/glfw3/glfw3Config.cmake:2 (find_dependency)"
       - "CMakeLists.txt:86 (find_package)"
     directories:
-      source: "/home/cris/Documents/PROJECT ECG/CatGame/build/CMakeFiles/CMakeScratch/TryCompile-fh8GcW"
-      binary: "/home/cris/Documents/PROJECT ECG/CatGame/build/CMakeFiles/CMakeScratch/TryCompile-fh8GcW"
+      source: "/home/cris/Documents/Catnap-Official/build/CMakeFiles/CMakeScratch/TryCompile-K8AEWr"
+      binary: "/home/cris/Documents/Catnap-Official/build/CMakeFiles/CMakeScratch/TryCompile-K8AEWr"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -2327,17 +2495,17 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: '/home/cris/Documents/PROJECT ECG/CatGame/build/CMakeFiles/CMakeScratch/TryCompile-fh8GcW'
+        Change Dir: '/home/cris/Documents/Catnap-Official/build/CMakeFiles/CMakeScratch/TryCompile-K8AEWr'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_af76b/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_af76b.dir/build.make CMakeFiles/cmTC_af76b.dir/build
-        gmake[1]: Entering directory '/home/cris/Documents/PROJECT ECG/CatGame/build/CMakeFiles/CMakeScratch/TryCompile-fh8GcW'
-        Building CXX object CMakeFiles/cmTC_af76b.dir/src.cxx.o
-        /usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=c++17 -o CMakeFiles/cmTC_af76b.dir/src.cxx.o -c "/home/cris/Documents/PROJECT ECG/CatGame/build/CMakeFiles/CMakeScratch/TryCompile-fh8GcW/src.cxx"
-        Linking CXX executable cmTC_af76b
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_af76b.dir/link.txt --verbose=1
-        /usr/bin/c++ CMakeFiles/cmTC_af76b.dir/src.cxx.o -o cmTC_af76b
-        gmake[1]: Leaving directory '/home/cris/Documents/PROJECT ECG/CatGame/build/CMakeFiles/CMakeScratch/TryCompile-fh8GcW'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_6a8fe/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_6a8fe.dir/build.make CMakeFiles/cmTC_6a8fe.dir/build
+        gmake[1]: Entering directory '/home/cris/Documents/Catnap-Official/build/CMakeFiles/CMakeScratch/TryCompile-K8AEWr'
+        Building CXX object CMakeFiles/cmTC_6a8fe.dir/src.cxx.o
+        /usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=c++17 -o CMakeFiles/cmTC_6a8fe.dir/src.cxx.o -c /home/cris/Documents/Catnap-Official/build/CMakeFiles/CMakeScratch/TryCompile-K8AEWr/src.cxx
+        Linking CXX executable cmTC_6a8fe
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6a8fe.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_6a8fe.dir/src.cxx.o -o cmTC_6a8fe
+        gmake[1]: Leaving directory '/home/cris/Documents/Catnap-Official/build/CMakeFiles/CMakeScratch/TryCompile-K8AEWr'
         
       exitCode: 0
   -
@@ -2378,11 +2546,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/cris/Documents/PROJECT ECG/CatGame/build/CMakeFiles/pkgRedirects/glfw3Config.cmake"
+        path: "/home/cris/Documents/Catnap-Official/build/CMakeFiles/pkgRedirects/glfw3Config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/cris/Documents/PROJECT ECG/CatGame/build/CMakeFiles/pkgRedirects/glfw3-config.cmake"
+        path: "/home/cris/Documents/Catnap-Official/build/CMakeFiles/pkgRedirects/glfw3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/cris/.gemini/antigravity/glfw3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/cris/.gemini/antigravity/glfw3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/cris/.config/Antigravity/glfw3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/cris/.config/Antigravity/glfw3-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
@@ -2407,6 +2591,8 @@ events:
       version: "3.4.0"
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -2464,11 +2650,27 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/cris/Documents/PROJECT ECG/CatGame/build/CMakeFiles/pkgRedirects/GLEWConfig.cmake"
+        path: "/home/cris/Documents/Catnap-Official/build/CMakeFiles/pkgRedirects/GLEWConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/cris/Documents/PROJECT ECG/CatGame/build/CMakeFiles/pkgRedirects/glew-config.cmake"
+        path: "/home/cris/Documents/Catnap-Official/build/CMakeFiles/pkgRedirects/glew-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/cris/.gemini/antigravity/GLEWConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/cris/.gemini/antigravity/glew-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/cris/.config/Antigravity/GLEWConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/cris/.config/Antigravity/glew-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
@@ -2530,6 +2732,8 @@ events:
     found: null
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -2569,6 +2773,8 @@ events:
     names:
       - "GL/glew.h"
     candidate_directories:
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/sbin/"
@@ -2597,6 +2803,8 @@ events:
       - "/opt/"
       - "/usr/include/X11/"
     searched_directories:
+      - "/home/cris/.gemini/antigravity/bin/GL/glew.h"
+      - "/home/cris/.config/Antigravity/bin/GL/glew.h"
       - "/usr/local/sbin/GL/glew.h"
       - "/usr/local/bin/GL/glew.h"
       - "/usr/sbin/GL/glew.h"
@@ -2613,6 +2821,8 @@ events:
     found: "/usr/include/"
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -2656,6 +2866,16 @@ events:
       - "glew"
       - "glew32"
     candidate_directories:
+      - "/home/cris/.gemini/antigravity/bin/lib/"
+      - "/home/cris/.gemini/antigravity/bin/lib64/"
+      - "/home/cris/.gemini/antigravity/bin/libx32/"
+      - "/home/cris/.gemini/antigravity/bin/lib/Release/x64/"
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/lib/"
+      - "/home/cris/.config/Antigravity/bin/lib64/"
+      - "/home/cris/.config/Antigravity/bin/libx32/"
+      - "/home/cris/.config/Antigravity/bin/lib/Release/x64/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/lib/"
       - "/usr/local/sbin/lib64/"
       - "/usr/local/sbin/libx32/"
@@ -2792,6 +3012,36 @@ events:
       - "/usr/lib/X11/lib/Release/x64/"
       - "/usr/lib/X11/"
     searched_directories:
+      - "/home/cris/.gemini/antigravity/bin/lib/"
+      - "/home/cris/.gemini/antigravity/bin/lib/"
+      - "/home/cris/.gemini/antigravity/bin/lib/"
+      - "/home/cris/.gemini/antigravity/bin/lib64/"
+      - "/home/cris/.gemini/antigravity/bin/lib64/"
+      - "/home/cris/.gemini/antigravity/bin/lib64/"
+      - "/home/cris/.gemini/antigravity/bin/libx32/"
+      - "/home/cris/.gemini/antigravity/bin/libx32/"
+      - "/home/cris/.gemini/antigravity/bin/libx32/"
+      - "/home/cris/.gemini/antigravity/bin/lib/Release/x64/"
+      - "/home/cris/.gemini/antigravity/bin/lib/Release/x64/"
+      - "/home/cris/.gemini/antigravity/bin/lib/Release/x64/"
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/lib/"
+      - "/home/cris/.config/Antigravity/bin/lib/"
+      - "/home/cris/.config/Antigravity/bin/lib/"
+      - "/home/cris/.config/Antigravity/bin/lib64/"
+      - "/home/cris/.config/Antigravity/bin/lib64/"
+      - "/home/cris/.config/Antigravity/bin/lib64/"
+      - "/home/cris/.config/Antigravity/bin/libx32/"
+      - "/home/cris/.config/Antigravity/bin/libx32/"
+      - "/home/cris/.config/Antigravity/bin/libx32/"
+      - "/home/cris/.config/Antigravity/bin/lib/Release/x64/"
+      - "/home/cris/.config/Antigravity/bin/lib/Release/x64/"
+      - "/home/cris/.config/Antigravity/bin/lib/Release/x64/"
+      - "/home/cris/.config/Antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/lib/"
       - "/usr/local/sbin/lib/"
       - "/usr/local/sbin/lib/"
@@ -2987,6 +3237,8 @@ events:
     found: "/usr/lib/x86_64-linux-gnu/libGLEW.so"
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -3030,6 +3282,12 @@ events:
       - "glewd"
       - "glew32d"
     candidate_directories:
+      - "/home/cris/.gemini/antigravity/bin/lib/"
+      - "/home/cris/.gemini/antigravity/bin/lib64/"
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/lib/"
+      - "/home/cris/.config/Antigravity/bin/lib64/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/lib/"
       - "/usr/local/sbin/lib64/"
       - "/usr/local/sbin/"
@@ -3112,6 +3370,24 @@ events:
       - "/usr/lib/X11/lib64/"
       - "/usr/lib/X11/"
     searched_directories:
+      - "/home/cris/.gemini/antigravity/bin/lib/"
+      - "/home/cris/.gemini/antigravity/bin/lib/"
+      - "/home/cris/.gemini/antigravity/bin/lib/"
+      - "/home/cris/.gemini/antigravity/bin/lib64/"
+      - "/home/cris/.gemini/antigravity/bin/lib64/"
+      - "/home/cris/.gemini/antigravity/bin/lib64/"
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/lib/"
+      - "/home/cris/.config/Antigravity/bin/lib/"
+      - "/home/cris/.config/Antigravity/bin/lib/"
+      - "/home/cris/.config/Antigravity/bin/lib64/"
+      - "/home/cris/.config/Antigravity/bin/lib64/"
+      - "/home/cris/.config/Antigravity/bin/lib64/"
+      - "/home/cris/.config/Antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/lib/"
       - "/usr/local/sbin/lib/"
       - "/usr/local/sbin/lib/"
@@ -3358,6 +3634,8 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -3401,6 +3679,16 @@ events:
       - "glew"
       - "glew32s"
     candidate_directories:
+      - "/home/cris/.gemini/antigravity/bin/lib/"
+      - "/home/cris/.gemini/antigravity/bin/lib64/"
+      - "/home/cris/.gemini/antigravity/bin/libx32/"
+      - "/home/cris/.gemini/antigravity/bin/lib/Release/x64/"
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/lib/"
+      - "/home/cris/.config/Antigravity/bin/lib64/"
+      - "/home/cris/.config/Antigravity/bin/libx32/"
+      - "/home/cris/.config/Antigravity/bin/lib/Release/x64/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/lib/"
       - "/usr/local/sbin/lib64/"
       - "/usr/local/sbin/libx32/"
@@ -3537,6 +3825,36 @@ events:
       - "/usr/lib/X11/lib/Release/x64/"
       - "/usr/lib/X11/"
     searched_directories:
+      - "/home/cris/.gemini/antigravity/bin/lib/"
+      - "/home/cris/.gemini/antigravity/bin/lib/"
+      - "/home/cris/.gemini/antigravity/bin/lib/"
+      - "/home/cris/.gemini/antigravity/bin/lib64/"
+      - "/home/cris/.gemini/antigravity/bin/lib64/"
+      - "/home/cris/.gemini/antigravity/bin/lib64/"
+      - "/home/cris/.gemini/antigravity/bin/libx32/"
+      - "/home/cris/.gemini/antigravity/bin/libx32/"
+      - "/home/cris/.gemini/antigravity/bin/libx32/"
+      - "/home/cris/.gemini/antigravity/bin/lib/Release/x64/"
+      - "/home/cris/.gemini/antigravity/bin/lib/Release/x64/"
+      - "/home/cris/.gemini/antigravity/bin/lib/Release/x64/"
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/lib/"
+      - "/home/cris/.config/Antigravity/bin/lib/"
+      - "/home/cris/.config/Antigravity/bin/lib/"
+      - "/home/cris/.config/Antigravity/bin/lib64/"
+      - "/home/cris/.config/Antigravity/bin/lib64/"
+      - "/home/cris/.config/Antigravity/bin/lib64/"
+      - "/home/cris/.config/Antigravity/bin/libx32/"
+      - "/home/cris/.config/Antigravity/bin/libx32/"
+      - "/home/cris/.config/Antigravity/bin/libx32/"
+      - "/home/cris/.config/Antigravity/bin/lib/Release/x64/"
+      - "/home/cris/.config/Antigravity/bin/lib/Release/x64/"
+      - "/home/cris/.config/Antigravity/bin/lib/Release/x64/"
+      - "/home/cris/.config/Antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/lib/"
       - "/usr/local/sbin/lib/"
       - "/usr/local/sbin/lib/"
@@ -3732,6 +4050,8 @@ events:
     found: "/usr/lib/x86_64-linux-gnu/libGLEW.a"
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"
@@ -3775,6 +4095,12 @@ events:
       - "glewds"
       - "glew32ds"
     candidate_directories:
+      - "/home/cris/.gemini/antigravity/bin/lib/"
+      - "/home/cris/.gemini/antigravity/bin/lib64/"
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/lib/"
+      - "/home/cris/.config/Antigravity/bin/lib64/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/lib/"
       - "/usr/local/sbin/lib64/"
       - "/usr/local/sbin/"
@@ -3857,6 +4183,24 @@ events:
       - "/usr/lib/X11/lib64/"
       - "/usr/lib/X11/"
     searched_directories:
+      - "/home/cris/.gemini/antigravity/bin/lib/"
+      - "/home/cris/.gemini/antigravity/bin/lib/"
+      - "/home/cris/.gemini/antigravity/bin/lib/"
+      - "/home/cris/.gemini/antigravity/bin/lib64/"
+      - "/home/cris/.gemini/antigravity/bin/lib64/"
+      - "/home/cris/.gemini/antigravity/bin/lib64/"
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.gemini/antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/lib/"
+      - "/home/cris/.config/Antigravity/bin/lib/"
+      - "/home/cris/.config/Antigravity/bin/lib/"
+      - "/home/cris/.config/Antigravity/bin/lib64/"
+      - "/home/cris/.config/Antigravity/bin/lib64/"
+      - "/home/cris/.config/Antigravity/bin/lib64/"
+      - "/home/cris/.config/Antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
+      - "/home/cris/.config/Antigravity/bin/"
       - "/usr/local/sbin/lib/"
       - "/usr/local/sbin/lib/"
       - "/usr/local/sbin/lib/"
@@ -4103,6 +4447,8 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/home/cris/.gemini/antigravity/bin"
+        - "/home/cris/.config/Antigravity/bin"
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/sbin"

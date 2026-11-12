@@ -56,10 +56,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/cris/Documents/PROJECT ECG/CatGame"
+CMAKE_SOURCE_DIR = /home/cris/Documents/Catnap-Official
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/cris/Documents/PROJECT ECG/CatGame/build"
+CMAKE_BINARY_DIR = /home/cris/Documents/Catnap-Official/build
 
 # Utility rule file for run.
 
@@ -70,9 +70,9 @@ include CMakeFiles/run.dir/compiler_depend.make
 include CMakeFiles/run.dir/progress.make
 
 CMakeFiles/run: Bin/ACG_Lab4
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="/home/cris/Documents/PROJECT ECG/CatGame/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Running ACG_Lab4..."
-	cd "/home/cris/Documents/PROJECT ECG/CatGame/build/Bin" && /usr/bin/cmake -E copy_directory /home/cris/Documents/PROJECT\ ECG/CatGame/Source/Shaders /home/cris/Documents/PROJECT\ ECG/CatGame/build/Bin
-	cd "/home/cris/Documents/PROJECT ECG/CatGame/build/Bin" && "/home/cris/Documents/PROJECT ECG/CatGame/build/Bin/ACG_Lab4"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cris/Documents/Catnap-Official/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Running ACG_Lab4..."
+	cd /home/cris/Documents/Catnap-Official/build/Bin && /usr/bin/cmake -E copy_directory /home/cris/Documents/Catnap-Official/Source/Shaders /home/cris/Documents/Catnap-Official/build/Bin
+	cd /home/cris/Documents/Catnap-Official/build/Bin && /home/cris/Documents/Catnap-Official/build/Bin/ACG_Lab4
 
 CMakeFiles/run.dir/codegen:
 .PHONY : CMakeFiles/run.dir/codegen
@@ -90,6 +90,6 @@ CMakeFiles/run.dir/clean:
 .PHONY : CMakeFiles/run.dir/clean
 
 CMakeFiles/run.dir/depend:
-	cd "/home/cris/Documents/PROJECT ECG/CatGame/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/cris/Documents/PROJECT ECG/CatGame" "/home/cris/Documents/PROJECT ECG/CatGame" "/home/cris/Documents/PROJECT ECG/CatGame/build" "/home/cris/Documents/PROJECT ECG/CatGame/build" "/home/cris/Documents/PROJECT ECG/CatGame/build/CMakeFiles/run.dir/DependInfo.cmake" "--color=$(COLOR)" run
+	cd /home/cris/Documents/Catnap-Official/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cris/Documents/Catnap-Official /home/cris/Documents/Catnap-Official /home/cris/Documents/Catnap-Official/build /home/cris/Documents/Catnap-Official/build /home/cris/Documents/Catnap-Official/build/CMakeFiles/run.dir/DependInfo.cmake "--color=$(COLOR)" run
 .PHONY : CMakeFiles/run.dir/depend
 

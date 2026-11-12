@@ -1,5 +1,5 @@
 CMakeFiles/ACG_Lab4.dir/Source/Shaders/Utils/shaderLoader.cpp.o: \
- /home/cris/Documents/PROJECT\ ECG/CatGame/Source/Shaders/Utils/shaderLoader.cpp \
+ /home/cris/Documents/Catnap-Official/Source/Shaders/Utils/shaderLoader.cpp \
  /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -179,7 +179,7 @@ CMakeFiles/ACG_Lab4.dir/Source/Shaders/Utils/shaderLoader.cpp.o: \
  /usr/include/c++/15/pstl/execution_defs.h /usr/include/c++/15/stdlib.h \
  /usr/include/string.h /usr/include/strings.h /usr/include/c++/15/sstream \
  /usr/include/c++/15/bits/sstream.tcc \
- /home/cris/Documents/PROJECT\ ECG/CatGame/Source/Shaders/Utils/../../Globals/globals.hpp \
+ /home/cris/Documents/Catnap-Official/Source/Shaders/Utils/../../Globals/globals.hpp \
  /usr/include/GL/glew.h /usr/include/c++/15/cstdint \
  /usr/lib/gcc/x86_64-linux-gnu/15/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \

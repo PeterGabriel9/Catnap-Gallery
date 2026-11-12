@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I"/home/cris/Documents/PROJECT ECG/CatGame/Dependencies/Include"
+CXX_INCLUDES = -I/home/cris/Documents/Catnap-Official/Dependencies/Include
 
 CXX_FLAGS = -g -std=c++17
 

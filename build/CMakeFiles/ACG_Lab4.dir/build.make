@@ -56,10 +56,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/cris/Documents/PROJECT ECG/CatGame"
+CMAKE_SOURCE_DIR = /home/cris/Documents/Catnap-Official
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/cris/Documents/PROJECT ECG/CatGame/build"
+CMAKE_BINARY_DIR = /home/cris/Documents/Catnap-Official/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ACG_Lab4.dir/depend.make
@@ -76,88 +76,88 @@ CMakeFiles/ACG_Lab4.dir/codegen:
 .PHONY : CMakeFiles/ACG_Lab4.dir/codegen
 
 CMakeFiles/ACG_Lab4.dir/Source/Game/game.cpp.o: CMakeFiles/ACG_Lab4.dir/flags.make
-CMakeFiles/ACG_Lab4.dir/Source/Game/game.cpp.o: /home/cris/Documents/PROJECT\ ECG/CatGame/Source/Game/game.cpp
+CMakeFiles/ACG_Lab4.dir/Source/Game/game.cpp.o: /home/cris/Documents/Catnap-Official/Source/Game/game.cpp
 CMakeFiles/ACG_Lab4.dir/Source/Game/game.cpp.o: CMakeFiles/ACG_Lab4.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cris/Documents/PROJECT ECG/CatGame/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ACG_Lab4.dir/Source/Game/game.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ACG_Lab4.dir/Source/Game/game.cpp.o -MF CMakeFiles/ACG_Lab4.dir/Source/Game/game.cpp.o.d -o CMakeFiles/ACG_Lab4.dir/Source/Game/game.cpp.o -c "/home/cris/Documents/PROJECT ECG/CatGame/Source/Game/game.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cris/Documents/Catnap-Official/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ACG_Lab4.dir/Source/Game/game.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ACG_Lab4.dir/Source/Game/game.cpp.o -MF CMakeFiles/ACG_Lab4.dir/Source/Game/game.cpp.o.d -o CMakeFiles/ACG_Lab4.dir/Source/Game/game.cpp.o -c /home/cris/Documents/Catnap-Official/Source/Game/game.cpp
 
 CMakeFiles/ACG_Lab4.dir/Source/Game/game.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ACG_Lab4.dir/Source/Game/game.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cris/Documents/PROJECT ECG/CatGame/Source/Game/game.cpp" > CMakeFiles/ACG_Lab4.dir/Source/Game/game.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cris/Documents/Catnap-Official/Source/Game/game.cpp > CMakeFiles/ACG_Lab4.dir/Source/Game/game.cpp.i
 
 CMakeFiles/ACG_Lab4.dir/Source/Game/game.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ACG_Lab4.dir/Source/Game/game.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cris/Documents/PROJECT ECG/CatGame/Source/Game/game.cpp" -o CMakeFiles/ACG_Lab4.dir/Source/Game/game.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cris/Documents/Catnap-Official/Source/Game/game.cpp -o CMakeFiles/ACG_Lab4.dir/Source/Game/game.cpp.s
 
 CMakeFiles/ACG_Lab4.dir/Source/Game/sprite_renderer.cpp.o: CMakeFiles/ACG_Lab4.dir/flags.make
-CMakeFiles/ACG_Lab4.dir/Source/Game/sprite_renderer.cpp.o: /home/cris/Documents/PROJECT\ ECG/CatGame/Source/Game/sprite_renderer.cpp
+CMakeFiles/ACG_Lab4.dir/Source/Game/sprite_renderer.cpp.o: /home/cris/Documents/Catnap-Official/Source/Game/sprite_renderer.cpp
 CMakeFiles/ACG_Lab4.dir/Source/Game/sprite_renderer.cpp.o: CMakeFiles/ACG_Lab4.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cris/Documents/PROJECT ECG/CatGame/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ACG_Lab4.dir/Source/Game/sprite_renderer.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ACG_Lab4.dir/Source/Game/sprite_renderer.cpp.o -MF CMakeFiles/ACG_Lab4.dir/Source/Game/sprite_renderer.cpp.o.d -o CMakeFiles/ACG_Lab4.dir/Source/Game/sprite_renderer.cpp.o -c "/home/cris/Documents/PROJECT ECG/CatGame/Source/Game/sprite_renderer.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cris/Documents/Catnap-Official/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ACG_Lab4.dir/Source/Game/sprite_renderer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ACG_Lab4.dir/Source/Game/sprite_renderer.cpp.o -MF CMakeFiles/ACG_Lab4.dir/Source/Game/sprite_renderer.cpp.o.d -o CMakeFiles/ACG_Lab4.dir/Source/Game/sprite_renderer.cpp.o -c /home/cris/Documents/Catnap-Official/Source/Game/sprite_renderer.cpp
 
 CMakeFiles/ACG_Lab4.dir/Source/Game/sprite_renderer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ACG_Lab4.dir/Source/Game/sprite_renderer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cris/Documents/PROJECT ECG/CatGame/Source/Game/sprite_renderer.cpp" > CMakeFiles/ACG_Lab4.dir/Source/Game/sprite_renderer.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cris/Documents/Catnap-Official/Source/Game/sprite_renderer.cpp > CMakeFiles/ACG_Lab4.dir/Source/Game/sprite_renderer.cpp.i
 
 CMakeFiles/ACG_Lab4.dir/Source/Game/sprite_renderer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ACG_Lab4.dir/Source/Game/sprite_renderer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cris/Documents/PROJECT ECG/CatGame/Source/Game/sprite_renderer.cpp" -o CMakeFiles/ACG_Lab4.dir/Source/Game/sprite_renderer.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cris/Documents/Catnap-Official/Source/Game/sprite_renderer.cpp -o CMakeFiles/ACG_Lab4.dir/Source/Game/sprite_renderer.cpp.s
 
 CMakeFiles/ACG_Lab4.dir/Source/Globals/globals.cpp.o: CMakeFiles/ACG_Lab4.dir/flags.make
-CMakeFiles/ACG_Lab4.dir/Source/Globals/globals.cpp.o: /home/cris/Documents/PROJECT\ ECG/CatGame/Source/Globals/globals.cpp
+CMakeFiles/ACG_Lab4.dir/Source/Globals/globals.cpp.o: /home/cris/Documents/Catnap-Official/Source/Globals/globals.cpp
 CMakeFiles/ACG_Lab4.dir/Source/Globals/globals.cpp.o: CMakeFiles/ACG_Lab4.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cris/Documents/PROJECT ECG/CatGame/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ACG_Lab4.dir/Source/Globals/globals.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ACG_Lab4.dir/Source/Globals/globals.cpp.o -MF CMakeFiles/ACG_Lab4.dir/Source/Globals/globals.cpp.o.d -o CMakeFiles/ACG_Lab4.dir/Source/Globals/globals.cpp.o -c "/home/cris/Documents/PROJECT ECG/CatGame/Source/Globals/globals.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cris/Documents/Catnap-Official/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ACG_Lab4.dir/Source/Globals/globals.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ACG_Lab4.dir/Source/Globals/globals.cpp.o -MF CMakeFiles/ACG_Lab4.dir/Source/Globals/globals.cpp.o.d -o CMakeFiles/ACG_Lab4.dir/Source/Globals/globals.cpp.o -c /home/cris/Documents/Catnap-Official/Source/Globals/globals.cpp
 
 CMakeFiles/ACG_Lab4.dir/Source/Globals/globals.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ACG_Lab4.dir/Source/Globals/globals.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cris/Documents/PROJECT ECG/CatGame/Source/Globals/globals.cpp" > CMakeFiles/ACG_Lab4.dir/Source/Globals/globals.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cris/Documents/Catnap-Official/Source/Globals/globals.cpp > CMakeFiles/ACG_Lab4.dir/Source/Globals/globals.cpp.i
 
 CMakeFiles/ACG_Lab4.dir/Source/Globals/globals.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ACG_Lab4.dir/Source/Globals/globals.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cris/Documents/PROJECT ECG/CatGame/Source/Globals/globals.cpp" -o CMakeFiles/ACG_Lab4.dir/Source/Globals/globals.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cris/Documents/Catnap-Official/Source/Globals/globals.cpp -o CMakeFiles/ACG_Lab4.dir/Source/Globals/globals.cpp.s
 
 CMakeFiles/ACG_Lab4.dir/Source/Shaders/Utils/shaderLoader.cpp.o: CMakeFiles/ACG_Lab4.dir/flags.make
-CMakeFiles/ACG_Lab4.dir/Source/Shaders/Utils/shaderLoader.cpp.o: /home/cris/Documents/PROJECT\ ECG/CatGame/Source/Shaders/Utils/shaderLoader.cpp
+CMakeFiles/ACG_Lab4.dir/Source/Shaders/Utils/shaderLoader.cpp.o: /home/cris/Documents/Catnap-Official/Source/Shaders/Utils/shaderLoader.cpp
 CMakeFiles/ACG_Lab4.dir/Source/Shaders/Utils/shaderLoader.cpp.o: CMakeFiles/ACG_Lab4.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cris/Documents/PROJECT ECG/CatGame/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ACG_Lab4.dir/Source/Shaders/Utils/shaderLoader.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ACG_Lab4.dir/Source/Shaders/Utils/shaderLoader.cpp.o -MF CMakeFiles/ACG_Lab4.dir/Source/Shaders/Utils/shaderLoader.cpp.o.d -o CMakeFiles/ACG_Lab4.dir/Source/Shaders/Utils/shaderLoader.cpp.o -c "/home/cris/Documents/PROJECT ECG/CatGame/Source/Shaders/Utils/shaderLoader.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cris/Documents/Catnap-Official/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ACG_Lab4.dir/Source/Shaders/Utils/shaderLoader.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ACG_Lab4.dir/Source/Shaders/Utils/shaderLoader.cpp.o -MF CMakeFiles/ACG_Lab4.dir/Source/Shaders/Utils/shaderLoader.cpp.o.d -o CMakeFiles/ACG_Lab4.dir/Source/Shaders/Utils/shaderLoader.cpp.o -c /home/cris/Documents/Catnap-Official/Source/Shaders/Utils/shaderLoader.cpp
 
 CMakeFiles/ACG_Lab4.dir/Source/Shaders/Utils/shaderLoader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ACG_Lab4.dir/Source/Shaders/Utils/shaderLoader.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cris/Documents/PROJECT ECG/CatGame/Source/Shaders/Utils/shaderLoader.cpp" > CMakeFiles/ACG_Lab4.dir/Source/Shaders/Utils/shaderLoader.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cris/Documents/Catnap-Official/Source/Shaders/Utils/shaderLoader.cpp > CMakeFiles/ACG_Lab4.dir/Source/Shaders/Utils/shaderLoader.cpp.i
 
 CMakeFiles/ACG_Lab4.dir/Source/Shaders/Utils/shaderLoader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ACG_Lab4.dir/Source/Shaders/Utils/shaderLoader.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cris/Documents/PROJECT ECG/CatGame/Source/Shaders/Utils/shaderLoader.cpp" -o CMakeFiles/ACG_Lab4.dir/Source/Shaders/Utils/shaderLoader.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cris/Documents/Catnap-Official/Source/Shaders/Utils/shaderLoader.cpp -o CMakeFiles/ACG_Lab4.dir/Source/Shaders/Utils/shaderLoader.cpp.s
 
 CMakeFiles/ACG_Lab4.dir/Source/main.cpp.o: CMakeFiles/ACG_Lab4.dir/flags.make
-CMakeFiles/ACG_Lab4.dir/Source/main.cpp.o: /home/cris/Documents/PROJECT\ ECG/CatGame/Source/main.cpp
+CMakeFiles/ACG_Lab4.dir/Source/main.cpp.o: /home/cris/Documents/Catnap-Official/Source/main.cpp
 CMakeFiles/ACG_Lab4.dir/Source/main.cpp.o: CMakeFiles/ACG_Lab4.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cris/Documents/PROJECT ECG/CatGame/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ACG_Lab4.dir/Source/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ACG_Lab4.dir/Source/main.cpp.o -MF CMakeFiles/ACG_Lab4.dir/Source/main.cpp.o.d -o CMakeFiles/ACG_Lab4.dir/Source/main.cpp.o -c "/home/cris/Documents/PROJECT ECG/CatGame/Source/main.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cris/Documents/Catnap-Official/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ACG_Lab4.dir/Source/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ACG_Lab4.dir/Source/main.cpp.o -MF CMakeFiles/ACG_Lab4.dir/Source/main.cpp.o.d -o CMakeFiles/ACG_Lab4.dir/Source/main.cpp.o -c /home/cris/Documents/Catnap-Official/Source/main.cpp
 
 CMakeFiles/ACG_Lab4.dir/Source/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ACG_Lab4.dir/Source/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cris/Documents/PROJECT ECG/CatGame/Source/main.cpp" > CMakeFiles/ACG_Lab4.dir/Source/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cris/Documents/Catnap-Official/Source/main.cpp > CMakeFiles/ACG_Lab4.dir/Source/main.cpp.i
 
 CMakeFiles/ACG_Lab4.dir/Source/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ACG_Lab4.dir/Source/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cris/Documents/PROJECT ECG/CatGame/Source/main.cpp" -o CMakeFiles/ACG_Lab4.dir/Source/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cris/Documents/Catnap-Official/Source/main.cpp -o CMakeFiles/ACG_Lab4.dir/Source/main.cpp.s
 
 CMakeFiles/ACG_Lab4.dir/Source/stb_image.cpp.o: CMakeFiles/ACG_Lab4.dir/flags.make
-CMakeFiles/ACG_Lab4.dir/Source/stb_image.cpp.o: /home/cris/Documents/PROJECT\ ECG/CatGame/Source/stb_image.cpp
+CMakeFiles/ACG_Lab4.dir/Source/stb_image.cpp.o: /home/cris/Documents/Catnap-Official/Source/stb_image.cpp
 CMakeFiles/ACG_Lab4.dir/Source/stb_image.cpp.o: CMakeFiles/ACG_Lab4.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cris/Documents/PROJECT ECG/CatGame/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ACG_Lab4.dir/Source/stb_image.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ACG_Lab4.dir/Source/stb_image.cpp.o -MF CMakeFiles/ACG_Lab4.dir/Source/stb_image.cpp.o.d -o CMakeFiles/ACG_Lab4.dir/Source/stb_image.cpp.o -c "/home/cris/Documents/PROJECT ECG/CatGame/Source/stb_image.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cris/Documents/Catnap-Official/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ACG_Lab4.dir/Source/stb_image.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ACG_Lab4.dir/Source/stb_image.cpp.o -MF CMakeFiles/ACG_Lab4.dir/Source/stb_image.cpp.o.d -o CMakeFiles/ACG_Lab4.dir/Source/stb_image.cpp.o -c /home/cris/Documents/Catnap-Official/Source/stb_image.cpp
 
 CMakeFiles/ACG_Lab4.dir/Source/stb_image.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ACG_Lab4.dir/Source/stb_image.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cris/Documents/PROJECT ECG/CatGame/Source/stb_image.cpp" > CMakeFiles/ACG_Lab4.dir/Source/stb_image.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cris/Documents/Catnap-Official/Source/stb_image.cpp > CMakeFiles/ACG_Lab4.dir/Source/stb_image.cpp.i
 
 CMakeFiles/ACG_Lab4.dir/Source/stb_image.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ACG_Lab4.dir/Source/stb_image.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cris/Documents/PROJECT ECG/CatGame/Source/stb_image.cpp" -o CMakeFiles/ACG_Lab4.dir/Source/stb_image.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cris/Documents/Catnap-Official/Source/stb_image.cpp -o CMakeFiles/ACG_Lab4.dir/Source/stb_image.cpp.s
 
 # Object files for target ACG_Lab4
 ACG_Lab4_OBJECTS = \
@@ -184,12 +184,12 @@ Bin/ACG_Lab4: /usr/lib/x86_64-linux-gnu/libGLEW.so
 Bin/ACG_Lab4: /usr/lib/x86_64-linux-gnu/libGLX.so
 Bin/ACG_Lab4: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 Bin/ACG_Lab4: CMakeFiles/ACG_Lab4.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/cris/Documents/PROJECT ECG/CatGame/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Bin/ACG_Lab4"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cris/Documents/Catnap-Official/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Bin/ACG_Lab4"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ACG_Lab4.dir/link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Copying shader files to runtime directory..."
-	/usr/bin/cmake -E copy_if_different /home/cris/Documents/PROJECT\ ECG/CatGame/Source/Shaders/SimpleFragmentShader.frag /home/cris/Documents/PROJECT\ ECG/CatGame/Source/Shaders/SimpleVertexShader.vert /home/cris/Documents/PROJECT\ ECG/CatGame/build/Bin
+	/usr/bin/cmake -E copy_if_different /home/cris/Documents/Catnap-Official/Source/Shaders/SimpleFragmentShader.frag /home/cris/Documents/Catnap-Official/Source/Shaders/SimpleVertexShader.vert /home/cris/Documents/Catnap-Official/build/Bin
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Copying cat.png to runtime directory..."
-	/usr/bin/cmake -E copy_if_different /home/cris/Documents/PROJECT\ ECG/CatGame/cat.png /home/cris/Documents/PROJECT\ ECG/CatGame/build/Bin
+	/usr/bin/cmake -E copy_if_different /home/cris/Documents/Catnap-Official/cat.png /home/cris/Documents/Catnap-Official/build/Bin
 
 # Rule to build all files generated by this target.
 CMakeFiles/ACG_Lab4.dir/build: Bin/ACG_Lab4
@@ -200,6 +200,6 @@ CMakeFiles/ACG_Lab4.dir/clean:
 .PHONY : CMakeFiles/ACG_Lab4.dir/clean
 
 CMakeFiles/ACG_Lab4.dir/depend:
-	cd "/home/cris/Documents/PROJECT ECG/CatGame/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/cris/Documents/PROJECT ECG/CatGame" "/home/cris/Documents/PROJECT ECG/CatGame" "/home/cris/Documents/PROJECT ECG/CatGame/build" "/home/cris/Documents/PROJECT ECG/CatGame/build" "/home/cris/Documents/PROJECT ECG/CatGame/build/CMakeFiles/ACG_Lab4.dir/DependInfo.cmake" "--color=$(COLOR)" ACG_Lab4
+	cd /home/cris/Documents/Catnap-Official/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cris/Documents/Catnap-Official /home/cris/Documents/Catnap-Official /home/cris/Documents/Catnap-Official/build /home/cris/Documents/Catnap-Official/build /home/cris/Documents/Catnap-Official/build/CMakeFiles/ACG_Lab4.dir/DependInfo.cmake "--color=$(COLOR)" ACG_Lab4
 .PHONY : CMakeFiles/ACG_Lab4.dir/depend
 

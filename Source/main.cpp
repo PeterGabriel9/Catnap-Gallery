@@ -14,14 +14,11 @@ const unsigned int SCREEN_HEIGHT = 768;
 
 
 //CALLBACKS
-
-/* ESC → close the window
-Any other key → record it in gamePtr->Keys[] as true (pressed) or false (released)
-This is why ProcessInput()  from game.cpp can just check Keys[GLFW_KEY_W] — this callback already filled it in.
-
-cpp
-
+/* ESC -> close the window
+    For any other key we record it in gamePtr->Keys[] as true (pressed) or false (released)
+    so  ProcessInput() from game.cpp can just check Keys[GLFW_KEY_W] this callback
 */
+
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode) {
     if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
@@ -34,17 +31,18 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
     }
 }
 
+//WINDOW RESIZE CALLBACk
 void window_callback(GLFWwindow* window, int new_width, int new_height) {
     glViewport(0, 0, new_width, new_height);
 }
 
+//MOUSE SCROLL CALLBACK to handle ZOOM
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset) {
     gamePtr->OnScroll(yoffset);
 }
 
 int main(void) {
 
-	//GLFW + GLEW initialization
     if (!glfwInit()) {
         fprintf(stderr, "Failed to initialize GLFW\n");
         return -1;
@@ -54,9 +52,9 @@ int main(void) {
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     #ifdef __APPLE__
-    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
     #endif
 
+    //Creating the window
     GLFWwindow* window = glfwCreateWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "2D Game", NULL, NULL);
     if (window == NULL) {
         fprintf(stderr, "Failed to open GLFW window.\n");
@@ -73,6 +71,7 @@ int main(void) {
         return -1;
     }
 
+    //Drawing area and background color
     glViewport(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
 
@@ -81,13 +80,14 @@ int main(void) {
     glfwSetFramebufferSizeCallback(window, window_callback);
     glfwSetScrollCallback(window, scroll_callback);
 
-    // Create game object, points gamePtr to it so the callback cand find it , calls Init() fir shaders,  gemorty and textures
+    // Create game object, points gamePtr to it so the callback cand find it , calls Init() for shaders,  geometry and textures
     Game game(SCREEN_WIDTH, SCREEN_HEIGHT);
     gamePtr = &game;
     game.Init();
 
+
     // Game loop with delta time
-	//check if the user did anything
+	//Check if the user did anything
     float lastFrame = 0.0f;
 
     while (!glfwWindowShouldClose(window)) {
@@ -96,9 +96,9 @@ int main(void) {
 		if (dt > 0.05f) dt = 0.05f;
         lastFrame = currentFrame;
 
-        glfwPollEvents();
+        glfwPollEvents(); // We check for evets like keyboard mouse etc and trigger callbacks
 
-		// 3 steps: read  input -> update logic - > draw
+		// 3 steps: read  input -> update logic -> draw
         game.ProcessInput(dt);
         game.Update(dt);
         game.Render();

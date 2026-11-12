@@ -11,25 +11,51 @@ Game::Game(unsigned int width, unsigned int height) {
     Height = height;
     State = GAME_ACTIVE;
 
-    // Pozitia de start: fix in centrul ecranului (0, 0)
+    //CAT info
     squarePos = glm::vec3(0.0f, 0.0f, 0.0f);
-    // Marimea pisicii: 0.5 x 0.5 (exact ca inainte!)
     squareSize = glm::vec2(0.5f, 0.5f);
-    // Viteza
     speed = 0.5f;
+
+    swordPos = glm::vec3(squarePos.x + squareSize.x* 0.5f, squarePos.y, 0.0f);
+    swordSize = glm::vec2(0.1f, 0.3f);
+    swordSpeed = 0.7f;
+    swordMaxDistance = 0.8f;
+    swordRotationAngle = 45.0f;
+    swordState = HELD;
+
+    //ENEMY info
+    enemyPos = glm::vec3(0.7f, 0.0f, 0.0f);       
+    enemySize = glm::vec2(0.25f, 0.35f);
+    enemyMaxHealth = 100.0f;
+    enemyHealth = 100.0f;
+    enemyTimer = 0.0f;
+    enemyAlive = true;
+
 
     Renderer = nullptr;
     memset(Keys, false, sizeof(Keys));
 }
 
+bool Game::CheckCollision(glm::vec3 pos1, glm::vec2 size1, glm::vec3 pos2, glm::vec2 size2) {
+    // we check collisionof the edges on Ox
+    bool collisionX = pos1.x + size1.x / 2.0f >= pos2.x - size2.x / 2.0f &&
+                      pos2.x + size2.x / 2.0f >= pos1.x - size1.x / 2.0f;
+    
+    // Cwe check collision of the edges on Oy
+    bool collisionY = pos1.y + size1.y / 2.0f >= pos2.y - size2.y / 2.0f &&
+                      pos2.y + size2.y / 2.0f >= pos1.y - size1.y / 2.0f;
+    
+    // collision happens if both casees are happening
+    return collisionX && collisionY;
+}
+
 void Game::Init() {
-    // 1. Incarcam shaderele
+    // Load shaders
     programID = LoadShaders("SimpleVertexShader.vert", "SimpleFragmentShader.frag");
 
-    // 2. Initializam SpriteRenderer cu shaderul nostru!
     Renderer = new SpriteRenderer(programID);
 
-    // 3. Incarcam imaginea pisicii (cat.png)
+    // cat.png load
     stbi_set_flip_vertically_on_load(true);
     int w, h, nrChannels;
     unsigned char* data = stbi_load("cat.png", &w, &h, &nrChannels, 4);
@@ -48,6 +74,35 @@ void Game::Init() {
         std::cout << "EROARE CRITICA: Imaginea nu a fost gasita!" << std::endl;
     }
     stbi_image_free(data);
+
+
+    unsigned char* swordData = stbi_load("sword.png", &w, &h, &nrChannels, 4);
+    glGenTextures(1, &swordTexture);
+    glBindTexture(GL_TEXTURE_2D, swordTexture);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+    if (swordData) {
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, swordData);
+    glGenerateMipmap(GL_TEXTURE_2D);
+    std::cout << "Sword loaded! " << w << "x" << h << std::endl;
+    } 
+    else {
+    std::cout << "EROARE: sword.png nu a fost gasita!" << std::endl;
+    }
+    stbi_image_free(swordData);
+
+
+    glGenTextures(1, &whiteTexture);
+    glBindTexture(GL_TEXTURE_2D, whiteTexture);
+    unsigned char whitePixel[] = { 255, 255, 255, 255 }; // RGBA alb
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, 1, 1, 0, GL_RGBA, GL_UNSIGNED_BYTE, whitePixel);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+
+
+
+
 }
 
 void Game::ProcessInput(float dt) {
@@ -59,26 +114,40 @@ void Game::ProcessInput(float dt) {
     // Tastele A, D, W, S
     if (Keys[GLFW_KEY_A]) {
         squarePos.x -= speed * dt;
+        swordPos = glm::vec3(squarePos.x + squareSize.x* 0.5f, squarePos.y, 0.0f);
     }
     if (Keys[GLFW_KEY_D]) {
         squarePos.x += speed * dt;
+        swordPos = glm::vec3(squarePos.x + squareSize.x* 0.5f, squarePos.y, 0.0f);
     }
     if (Keys[GLFW_KEY_W]) {
         squarePos.y += speed * dt;
+        swordPos = glm::vec3(squarePos.x + squareSize.x* 0.5f, squarePos.y, 0.0f);
     }
     if (Keys[GLFW_KEY_S]) {
         squarePos.y -= speed * dt;
+        swordPos = glm::vec3(squarePos.x + squareSize.x* 0.5f, squarePos.y, 0.0f);
     }
 
-    // Sa nu iasa din ecran pe X
+
+    //SWORD MOVEMENT
+    // the sword is thrown only if it is in state HELD and we press SPACE
+    if(Keys[GLFW_KEY_SPACE] && swordState == HELD ){
+        swordState= THROWN;
+        swordStartPos  = squarePos;
+
+        swordPos = squarePos;
+    }
+
+    // dont go outside screen OX
     if (squarePos.x > limitX) {
-        squarePos.x = limitX;
+        squarePos.x= limitX;
     }
     if (squarePos.x < -limitX) {
         squarePos.x = -limitX;
     }
 
-    // Sa nu iasa din ecran pe Y
+    // Sdont go outside scrren OY
     if (squarePos.y > limitY) {
         squarePos.y = limitY;
     }
@@ -88,15 +157,87 @@ void Game::ProcessInput(float dt) {
 }
 
 void Game::Update(float dt) {
-    // Logica jocului (nu mai trebuie sa calculam matricea "trans" manual!)
+    
+    if(swordState == HELD) {
+        swordPos = squarePos;
+        swordRotationAngle = 45.0f;
+
+} else if(swordState == THROWN) {
+    swordPos.x += swordSpeed * dt;
+    swordRotationAngle += 1080.0f * dt;
+
+    if(enemyAlive && CheckCollision(swordPos, swordSize, enemyPos, enemySize)) {
+        enemyHealth -=34.0f;
+        std::cout << "Inamic lovit! Viata: " << enemyHealth << std::endl;
+
+            // sword goes back to player if it hits smth
+            swordState = RETURNING;
+
+
+         if (enemyHealth <= 0.0f) {
+             enemyAlive = false;
+            std::cout << "Inamicul a fost distrus!" << std::endl;
+            }
+    }
+    //comgin back is it achives its maximum distance limit
+    if(swordPos.x >= swordStartPos.x + swordMaxDistance) {
+        swordState = RETURNING;
+    }
+
+} else if(swordState == RETURNING) {
+    swordPos.x -= swordSpeed*dt;
+    swordRotationAngle += 1080.0f *dt;
+
+    if (swordPos.x <= squarePos.x) {
+        swordState = HELD;
+    }
 }
+
+}
+
+void Game::DrawEnemy() {
+    if (!enemyAlive) return;
+
+    // Folosim enemyPos direct ca vec3
+    glm::vec3 bodyPos = enemyPos;
+
+    // 1. Corpul (Dreptunghi rosu inchis)
+    Renderer->DrawSprite(whiteTexture, glm::vec2(bodyPos), enemySize, 0.0f, glm::vec3(0.6f, 0.1f, 0.1f));
+
+    // 2. Capul (Patrat rosu deschis, pozitionat mai sus de corp)
+    glm::vec2 headSize = glm::vec2(0.2f, 0.2f);
+    glm::vec3 headPos = glm::vec3(bodyPos.x, bodyPos.y + enemySize.y / 2.0f + headSize.y / 2.0f, 0.0f);
+    Renderer->DrawSprite(whiteTexture, glm::vec2(headPos), headSize, 0.0f, glm::vec3(0.8f, 0.2f, 0.2f));
+
+    // 3. Ochiul stang (Patrat mic negru, decalat la stanga pe cap)
+    glm::vec2 eyeSize = glm::vec2(0.04f, 0.04f);
+    glm::vec3 leftEyePos = glm::vec3(headPos.x - 0.05f, headPos.y + 0.02f, 0.0f);
+    Renderer->DrawSprite(whiteTexture, glm::vec2(leftEyePos), eyeSize, 0.0f, glm::vec3(0.0f, 0.0f, 0.0f));
+
+    // 4. Ochiul drept (Patrat mic negru, decalat la dreapta pe cap)
+    glm::vec3 rightEyePos = glm::vec3(headPos.x + 0.05f, headPos.y + 0.02f, 0.0f);
+    Renderer->DrawSprite(whiteTexture, glm::vec2(rightEyePos), eyeSize, 0.0f, glm::vec3(0.0f, 0.0f, 0.0f));
+}
+
+
 
 void Game::Render() {
     glClear(GL_COLOR_BUFFER_BIT);
 
+   
     // DOAR O SINGURA LINIE PENTRU A DESENA!
     // Parametri: textura, pozitia (X, Y), marimea, rotatia (0 grade), culoarea (alb)
+   
     Renderer->DrawSprite(texture, glm::vec2(squarePos), squareSize, 0.0f, glm::vec3(1.0f, 1.0f, 1.0f));
+   
+    glm::vec2 drawSwordPos = glm::vec2(swordPos);
+    if (swordState == HELD) {
+    drawSwordPos.x += squareSize.x * 0.5f;  // offset in dreapta doar cand e tinuta
+   }
+    
+    Renderer->DrawSprite(swordTexture, drawSwordPos, swordSize, swordRotationAngle);
+    DrawEnemy();
+    
 }
 
 void Game::OnScroll(double yoffset) {
