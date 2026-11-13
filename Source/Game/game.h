@@ -38,6 +38,7 @@ private:
     SpriteRenderer* Renderer;      // Pointerul catre SpriteRenderer
 
     GLuint whiteTexture;
+    GLuint bgTexture; //id for backgrounf picture
 
     // Datele pisicii
     glm::vec3 catPos;

@@ -101,6 +101,22 @@ void Game::Init() {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
 
+     unsigned char* bgData = stbi_load("background.png", &w, &h, &nrChannels, 4);
+    glGenTextures(1, &bgTexture);
+    glBindTexture(GL_TEXTURE_2D, bgTexture);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    if (bgData) {
+        // Trimitem pixelii in memoria placii video (VBO/Texture memory)
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, bgData);
+        glGenerateMipmap(GL_TEXTURE_2D);
+        std::cout << "Background incarcat cu succes! " << w << "x" << h << std::endl;
+    } else {
+        std::cout << "EROARE CRITICA: background.png nu a fost gasita!" << std::endl;
+    }
+    
+    // Eliberam memoria RAM (pixelii sunt salvati acum in GPU)
+    stbi_image_free(bgData);
 
 
 }
@@ -244,6 +260,7 @@ void Game::Render() {
     // DOAR O SINGURA LINIE PENTRU A DESENA!
     // Parametri: textura, pozitia (X, Y), marimea, rotatia (0 grade), culoarea (alb)
    
+    Renderer->DrawSprite(bgTexture, glm::vec2(0.0f, 0.0f), glm::vec2(2.0f, 2.0f), 0.0f, glm::vec3(1.0f, 1.0f, 1.0f));
     Renderer->DrawSprite(texture, glm::vec2(catPos), catSize, 0.0f, glm::vec3(1.0f, 1.0f, 1.0f));
    
     glm::vec2 drawSwordPos = glm::vec2(swordPos);
@@ -266,5 +283,6 @@ void Game::OnScroll(double yoffset) {
 Game::~Game() {
     delete Renderer;
     glDeleteTextures(1, &texture);
+      glDeleteTextures(1, &bgTexture);
     glDeleteProgram(programID);
 }

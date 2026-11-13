@@ -132,6 +132,25 @@ if(EXISTS "${CMAKE_SOURCE_DIR}/cat.png")
     )
 endif()
 
+if(EXISTS "${CMAKE_SOURCE_DIR}/background.png")
+    add_custom_command(
+        TARGET ${PROJECT_NAME}
+        POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+                "${CMAKE_SOURCE_DIR}/background.png" $<TARGET_FILE_DIR:${PROJECT_NAME}>
+        COMMENT "Copying background.png to runtime directory..."
+    )
+endif()
+
+if(EXISTS "${CMAKE_SOURCE_DIR}/sword.png")
+    add_custom_command(
+        TARGET ${PROJECT_NAME}
+        POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+                "${CMAKE_SOURCE_DIR}/sword.png" $<TARGET_FILE_DIR:${PROJECT_NAME}>
+        COMMENT "Copying sword.png to runtime directory..."
+    )
+endif()
 # Copy resources folder after build
 set(RESOURCES_DIR ${CMAKE_SOURCE_DIR}/Resources)
 
