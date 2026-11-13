@@ -12,11 +12,11 @@ Game::Game(unsigned int width, unsigned int height) {
     State = GAME_ACTIVE;
 
     //CAT info
-    squarePos = glm::vec3(0.0f, 0.0f, 0.0f);
-    squareSize = glm::vec2(0.5f, 0.5f);
+    catPos = glm::vec3(0.0f, 0.0f, 0.0f);
+    catSize = glm::vec2(0.5f, 0.5f);
     speed = 0.5f;
 
-    swordPos = glm::vec3(squarePos.x + squareSize.x* 0.5f, squarePos.y, 0.0f);
+    swordPos = glm::vec3(catPos.x + catSize.x* 0.5f, catPos.y, 0.0f);
     swordSize = glm::vec2(0.1f, 0.3f);
     swordSpeed = 0.7f;
     swordMaxDistance = 0.8f;
@@ -108,25 +108,25 @@ void Game::Init() {
 void Game::ProcessInput(float dt) {
     // Limita exacta pana la marginea ecranului:
     // (1.0 minus jumatate din dimensiunea patratului!)
-    float limitX = 1.0f - (squareSize.x / 2.0f);
-    float limitY = 1.0f - (squareSize.y / 2.0f);
+    float limitX = 1.0f - (catSize.x / 2.0f);
+    float limitY = 1.0f - (catSize.y / 2.0f);
 
     // Tastele A, D, W, S
     if (Keys[GLFW_KEY_A]) {
-        squarePos.x -= speed * dt;
-        //swordPos = glm::vec3(squarePos.x + squareSize.x* 0.5f, squarePos.y, 0.0f);
+        catPos.x -= speed * dt;
+        //swordPos = glm::vec3(catPos.x + catSize.x* 0.5f, catPos.y, 0.0f);
     }
     if (Keys[GLFW_KEY_D]) {
-        squarePos.x += speed * dt;
-        //swordPos = glm::vec3(squarePos.x + squareSize.x* 0.5f, squarePos.y, 0.0f);
+        catPos.x += speed * dt;
+        //swordPos = glm::vec3(catPos.x + catSize.x* 0.5f, catPos.y, 0.0f);
     }
     if (Keys[GLFW_KEY_W]) {
-        squarePos.y += speed * dt;
-        //swordPos = glm::vec3(squarePos.x + squareSize.x* 0.5f, squarePos.y, 0.0f);
+        catPos.y += speed * dt;
+        //swordPos = glm::vec3(catPos.x + catSize.x* 0.5f, catPos.y, 0.0f);
     }
     if (Keys[GLFW_KEY_S]) {
-        squarePos.y -= speed * dt;
-      //swordPos = glm::vec3(squarePos.x + squareSize.x* 0.5f, squarePos.y, 0.0f);
+        catPos.y -= speed * dt;
+      //swordPos = glm::vec3(catPos.x + catSize.x* 0.5f, catPos.y, 0.0f);
     }
 
 
@@ -134,32 +134,32 @@ void Game::ProcessInput(float dt) {
     // the sword is thrown only if it is in state HELD and we press SPACE
     if(Keys[GLFW_KEY_SPACE] && swordState == HELD ){
         swordState= THROWN;
-        swordStartPos  = squarePos;
+        swordStartPos  = catPos;
 
-        swordPos = squarePos;
+        swordPos = catPos;
     }
      
     // dont go outside screen OX
-    if (squarePos.x > limitX) {
-        squarePos.x= limitX;
+    if (catPos.x > limitX) {
+        catPos.x= limitX;
     }
-    if (squarePos.x < -limitX) {
-        squarePos.x = -limitX;
+    if (catPos.x < -limitX) {
+        catPos.x = -limitX;
     }
 
     // Sdont go outside scrren OY
-    if (squarePos.y > limitY) {
-        squarePos.y = limitY;
+    if (catPos.y > limitY) {
+        catPos.y = limitY;
     }
-    if (squarePos.y < -limitY) {
-        squarePos.y = -limitY;
+    if (catPos.y < -limitY) {
+        catPos.y = -limitY;
     }
 }
 
 void Game::Update(float dt) {
     
     if(swordState == HELD) {
-        swordPos = squarePos;
+        swordPos = catPos;
         swordRotationAngle = 45.0f;
 
 } else if(swordState == THROWN) {
@@ -189,11 +189,11 @@ void Game::Update(float dt) {
     swordRotationAngle += 1080.0f *dt;
 
     //we catch the sword only if we move the cat such that we catch it 
-     if (CheckCollision(swordPos, swordSize, squarePos, squareSize)) {
+     if (CheckCollision(swordPos, swordSize, catPos, catSize)) {
         swordState = HELD;
     }
     //if ti goes past the cat by 0.3 unit we consider it dropped
-       if (swordPos.x < squarePos.x - 0.3f) {
+       if (swordPos.x < catPos.x - 0.3f) {
         swordState = GROUND;
     }
 }else if(swordState == GROUND) {
@@ -205,7 +205,7 @@ void Game::Update(float dt) {
     }
     // it s not rotating anymore and we cath it by going to it
     swordRotationAngle = 0.0f;
-    if (CheckCollision(swordPos, swordSize, squarePos, squareSize)) {
+    if (CheckCollision(swordPos, swordSize, catPos, catSize)) {
         swordState = HELD;
     }
  }
@@ -244,11 +244,11 @@ void Game::Render() {
     // DOAR O SINGURA LINIE PENTRU A DESENA!
     // Parametri: textura, pozitia (X, Y), marimea, rotatia (0 grade), culoarea (alb)
    
-    Renderer->DrawSprite(texture, glm::vec2(squarePos), squareSize, 0.0f, glm::vec3(1.0f, 1.0f, 1.0f));
+    Renderer->DrawSprite(texture, glm::vec2(catPos), catSize, 0.0f, glm::vec3(1.0f, 1.0f, 1.0f));
    
     glm::vec2 drawSwordPos = glm::vec2(swordPos);
     if (swordState == HELD) {
-    drawSwordPos.x += squareSize.x * 0.5f;  // offset in dreapta doar cand e tinuta
+    drawSwordPos.x += catSize.x * 0.5f;  // offset in dreapta doar cand e tinuta
    }
     
     Renderer->DrawSprite(swordTexture, drawSwordPos, swordSize, swordRotationAngle);
@@ -258,9 +258,9 @@ void Game::Render() {
 
 void Game::OnScroll(double yoffset) {
     // Zoom in / Zoom out cand invarti de rotita mouse-ului
-    squareSize += static_cast<float>(yoffset) * 0.05f;
-    if (squareSize.x < 0.1f) squareSize = glm::vec2(0.1f, 0.1f);
-    if (squareSize.x > 1.5f) squareSize = glm::vec2(1.5f, 1.5f);
+    catSize += static_cast<float>(yoffset) * 0.05f;
+    if (catSize.x < 0.1f) catSize = glm::vec2(0.1f, 0.1f);
+    if (catSize.x > 1.5f) catSize = glm::vec2(1.5f, 1.5f);
 }
 
 Game::~Game() {

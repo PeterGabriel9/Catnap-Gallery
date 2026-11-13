@@ -40,8 +40,8 @@ private:
     GLuint whiteTexture;
 
     // Datele pisicii
-    glm::vec3 squarePos;
-    glm::vec2 squareSize;          
+    glm::vec3 catPos;
+    glm::vec2 catSize;          
     float speed;
 
     //datele SABIE
