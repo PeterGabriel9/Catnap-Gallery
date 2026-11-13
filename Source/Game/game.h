@@ -44,6 +44,11 @@ private:
     glm::vec3 catPos;
     glm::vec2 catSize;          
     float speed;
+    float velocityY; // vertical speed
+    float gravity; // gravoty force that is briging her back down
+    float jumpStrength;
+    bool catIsGrounded;
+    float groundLevel;
 
     //datele SABIE
     GLuint swordTexture;

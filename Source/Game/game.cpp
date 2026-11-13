@@ -12,12 +12,18 @@ Game::Game(unsigned int width, unsigned int height) {
     State = GAME_ACTIVE;
 
     //CAT info
-    catPos = glm::vec3(0.0f, 0.0f, 0.0f);
+    groundLevel = -0.55;
+    catPos = glm::vec3(-0.5f, groundLevel, 0.0f);
     catSize = glm::vec2(0.5f, 0.5f);
     speed = 0.5f;
+    velocityY = 0.0f;
+    gravity = -4.0f;            // forța care trage în jos (cu minus)
+    jumpStrength = 1.6f;        // puterea saltului în sus
+    catIsGrounded = true;          // la început stă pe pământ
+    
 
     swordPos = glm::vec3(catPos.x + catSize.x* 0.5f, catPos.y, 0.0f);
-    swordSize = glm::vec2(0.1f, 0.3f);
+    swordSize = glm::vec2(0.2f, 0.4f);
     swordSpeed = 0.7f;
     swordMaxDistance = 0.8f;
     swordRotationAngle = 45.0f;
@@ -54,7 +60,8 @@ void Game::Init() {
     programID = LoadShaders("SimpleVertexShader.vert", "SimpleFragmentShader.frag");
 
     Renderer = new SpriteRenderer(programID);
-
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     // cat.png load
     stbi_set_flip_vertically_on_load(true);
     int w, h, nrChannels;
@@ -136,19 +143,20 @@ void Game::ProcessInput(float dt) {
         catPos.x += speed * dt;
         //swordPos = glm::vec3(catPos.x + catSize.x* 0.5f, catPos.y, 0.0f);
     }
-    if (Keys[GLFW_KEY_W]) {
-        catPos.y += speed * dt;
-        //swordPos = glm::vec3(catPos.x + catSize.x* 0.5f, catPos.y, 0.0f);
+    if (Keys[GLFW_KEY_SPACE]) {
+        velocityY = jumpStrength;  // îi dă impulsul în sus
+        catIsGrounded = false;
     }
-    if (Keys[GLFW_KEY_S]) {
+
+  /* if (Keys[GLFW_KEY_S]) {
         catPos.y -= speed * dt;
       //swordPos = glm::vec3(catPos.x + catSize.x* 0.5f, catPos.y, 0.0f);
-    }
+    }*/
 
 
     //SWORD MOVEMENT
     // the sword is thrown only if it is in state HELD and we press SPACE
-    if(Keys[GLFW_KEY_SPACE] && swordState == HELD ){
+    if(Keys[GLFW_MOUSE_BUTTON_RIGHT] && swordState == HELD ){
         swordState= THROWN;
         swordStartPos  = catPos;
 
@@ -174,9 +182,20 @@ void Game::ProcessInput(float dt) {
 
 void Game::Update(float dt) {
     
+       // === FIZICA GRAVITAȚIEI ȘI A SĂRITURII ===
+    velocityY += gravity * dt;         // gravitația reduce viteza și o trage în jos
+    catPos.y += velocityY * dt;         // deplasăm pisica pe axa Y
+    // Dacă a atins sau a trecut sub nivelul pământului:
+    if (catPos.y <= groundLevel) {
+        catPos.y = groundLevel;         // o oprim fix pe pământ
+        velocityY = 0.0f;              // oprim căderea
+        catIsGrounded = true;             // a aterizat, acum poate sări din nou!
+    }
     if(swordState == HELD) {
         swordPos = catPos;
-        swordRotationAngle = 45.0f;
+        swordRotationAngle = 130.0f;
+        glm::vec2 handOffset = glm::vec2(0.12f, -0.05f); // reglezi valorile ca manerul sa fie fix in labuta
+        glm::vec2 drawSwordPos = glm::vec2(catPos.x + handOffset.x, catPos.y + handOffset.y);
 
 } else if(swordState == THROWN) {
     swordPos.x += swordSpeed * dt;
@@ -217,7 +236,7 @@ void Game::Update(float dt) {
       // consider floor at -0.85 and the sword stops there
     swordPos.y -= 1.5f * dt;  
     if (swordPos.y < -0.85f) {
-        swordPos.y = -0.85f;  
+        swordPos.y = -0.85f;   
     }
     // it s not rotating anymore and we cath it by going to it
     swordRotationAngle = 0.0f;
@@ -256,16 +275,19 @@ void Game::DrawEnemy() {
 void Game::Render() {
     glClear(GL_COLOR_BUFFER_BIT);
 
-   
     // DOAR O SINGURA LINIE PENTRU A DESENA!
     // Parametri: textura, pozitia (X, Y), marimea, rotatia (0 grade), culoarea (alb)
    
     Renderer->DrawSprite(bgTexture, glm::vec2(0.0f, 0.0f), glm::vec2(2.0f, 2.0f), 0.0f, glm::vec3(1.0f, 1.0f, 1.0f));
     Renderer->DrawSprite(texture, glm::vec2(catPos), catSize, 0.0f, glm::vec3(1.0f, 1.0f, 1.0f));
    
-    glm::vec2 drawSwordPos = glm::vec2(swordPos);
+   glm::vec2 drawSwordPos = glm::vec2(swordPos);
+   float drawSwordAngle = swordRotationAngle;
+
     if (swordState == HELD) {
-    drawSwordPos.x += catSize.x * 0.5f;  // offset in dreapta doar cand e tinuta
+       drawSwordPos.x += catSize.x * 0.6f;  // offset in dreapta doar cand e tinuta  drawSwordPos.x = catPos.x + catSize.x * 0.25f;  // putin in fata (dreapta)
+        drawSwordPos.y = catPos.y + catSize.y * 0.1f;  // la inaltimea labutei
+        drawSwordAngle = 0.5f;                   
    }
     
     Renderer->DrawSprite(swordTexture, drawSwordPos, swordSize, swordRotationAngle);

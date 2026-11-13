@@ -31,6 +31,14 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
     }
 }
 
+void mouse_button_callback(GLFWwindow* window, int button, int action, int mods) {
+    if (button >= 0 && button < 1024) {
+        if (action == GLFW_PRESS)
+            gamePtr->Keys[button] = true;  
+        else if (action == GLFW_RELEASE)
+            gamePtr->Keys[button] = false;  
+}
+}
 //WINDOW RESIZE CALLBACk
 void window_callback(GLFWwindow* window, int new_width, int new_height) {
     glViewport(0, 0, new_width, new_height);
@@ -79,6 +87,7 @@ int main(void) {
     glfwSetKeyCallback(window, key_callback);
     glfwSetFramebufferSizeCallback(window, window_callback);
     glfwSetScrollCallback(window, scroll_callback);
+    glfwSetMouseButtonCallback(window, mouse_button_callback);
 
     // Create game object, points gamePtr to it so the callback cand find it , calls Init() for shaders,  geometry and textures
     Game game(SCREEN_WIDTH, SCREEN_HEIGHT);
