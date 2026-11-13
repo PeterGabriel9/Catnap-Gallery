@@ -55,7 +55,7 @@ private:
     float swordMaxDistance;
     glm::vec3 swordStartPos; // sa stim unde se intoarce sabia
     //HELD-> SABIA LA PISICA -> SPace => Thrown -> MaxDstance => RETURNING => HELD
-    enum SwordState { HELD, THROWN, RETURNING }; //3 stari
+    enum SwordState { HELD, THROWN, RETURNING , GROUND}; //4 stari , la GROUND daca nu prindem sabia, pica pe jos si mergem sa o luam
     SwordState swordState;
 
     //INAMIC

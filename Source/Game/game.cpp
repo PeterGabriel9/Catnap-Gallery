@@ -114,19 +114,19 @@ void Game::ProcessInput(float dt) {
     // Tastele A, D, W, S
     if (Keys[GLFW_KEY_A]) {
         squarePos.x -= speed * dt;
-        swordPos = glm::vec3(squarePos.x + squareSize.x* 0.5f, squarePos.y, 0.0f);
+        //swordPos = glm::vec3(squarePos.x + squareSize.x* 0.5f, squarePos.y, 0.0f);
     }
     if (Keys[GLFW_KEY_D]) {
         squarePos.x += speed * dt;
-        swordPos = glm::vec3(squarePos.x + squareSize.x* 0.5f, squarePos.y, 0.0f);
+        //swordPos = glm::vec3(squarePos.x + squareSize.x* 0.5f, squarePos.y, 0.0f);
     }
     if (Keys[GLFW_KEY_W]) {
         squarePos.y += speed * dt;
-        swordPos = glm::vec3(squarePos.x + squareSize.x* 0.5f, squarePos.y, 0.0f);
+        //swordPos = glm::vec3(squarePos.x + squareSize.x* 0.5f, squarePos.y, 0.0f);
     }
     if (Keys[GLFW_KEY_S]) {
         squarePos.y -= speed * dt;
-        swordPos = glm::vec3(squarePos.x + squareSize.x* 0.5f, squarePos.y, 0.0f);
+      //swordPos = glm::vec3(squarePos.x + squareSize.x* 0.5f, squarePos.y, 0.0f);
     }
 
 
@@ -138,7 +138,7 @@ void Game::ProcessInput(float dt) {
 
         swordPos = squarePos;
     }
-
+     
     // dont go outside screen OX
     if (squarePos.x > limitX) {
         squarePos.x= limitX;
@@ -188,11 +188,27 @@ void Game::Update(float dt) {
     swordPos.x -= swordSpeed*dt;
     swordRotationAngle += 1080.0f *dt;
 
-    if (swordPos.x <= squarePos.x) {
+    //we catch the sword only if we move the cat such that we catch it 
+     if (CheckCollision(swordPos, swordSize, squarePos, squareSize)) {
         swordState = HELD;
     }
-}
-
+    //if ti goes past the cat by 0.3 unit we consider it dropped
+       if (swordPos.x < squarePos.x - 0.3f) {
+        swordState = GROUND;
+    }
+}else if(swordState == GROUND) {
+    // the sowrd goes down (gravty) until it touches the floor
+      // consider floor at -0.85 and the sword stops there
+    swordPos.y -= 1.5f * dt;  
+    if (swordPos.y < -0.85f) {
+        swordPos.y = -0.85f;  
+    }
+    // it s not rotating anymore and we cath it by going to it
+    swordRotationAngle = 0.0f;
+    if (CheckCollision(swordPos, swordSize, squarePos, squareSize)) {
+        swordState = HELD;
+    }
+ }
 }
 
 void Game::DrawEnemy() {
