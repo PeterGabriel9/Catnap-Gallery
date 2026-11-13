@@ -36,10 +36,11 @@ private:
     GLuint programID;
     GLuint texture;
     SpriteRenderer* Renderer;      // Pointerul catre SpriteRenderer
-
+    GLuint heartTexture; 
     GLuint whiteTexture;
     GLuint bgTexture; //id for backgrounf picture
-
+    //Camera
+   float cameraX;
     // Datele pisicii
     glm::vec3 catPos;
     glm::vec2 catSize;          
@@ -50,6 +51,13 @@ private:
     bool catIsGrounded;
     float groundLevel;
 
+
+    //cat live
+    float catMaxHealth;
+    float catHealth;
+    float catHurtTimer; // imunitate cateva secunde ca ar moare instnat la cate frameuri sunt generate pe sec
+
+ 
     //datele SABIE
     GLuint swordTexture;
     glm::vec3 swordPos;

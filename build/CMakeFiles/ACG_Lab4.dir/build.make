@@ -192,6 +192,8 @@ Bin/ACG_Lab4: CMakeFiles/ACG_Lab4.dir/link.txt
 	/usr/bin/cmake -E copy_if_different /home/cris/Documents/Catnap-Official/cat.png /home/cris/Documents/Catnap-Official/build/Bin
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Copying background.png to runtime directory..."
 	/usr/bin/cmake -E copy_if_different /home/cris/Documents/Catnap-Official/background.png /home/cris/Documents/Catnap-Official/build/Bin
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Copying heart.png to runtime directory..."
+	/usr/bin/cmake -E copy_if_different /home/cris/Documents/Catnap-Official/heart.png /home/cris/Documents/Catnap-Official/build/Bin
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Copying sword.png to runtime directory..."
 	/usr/bin/cmake -E copy_if_different /home/cris/Documents/Catnap-Official/sword.png /home/cris/Documents/Catnap-Official/build/Bin
 
