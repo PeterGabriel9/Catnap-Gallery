@@ -11,6 +11,12 @@ enum GameState {
     GAME_WIN
 };
 
+// Which scene the player is currently in
+enum Scene {
+    SCENE_MUSEUM,
+    SCENE_PAINTING
+};
+
 class Game {
 public:
     GameState State;
@@ -35,10 +41,12 @@ public:
 private:
     GLuint programID;
     GLuint texture;
+    GLuint catSwordTexture;   // Meow holding the sword (shown when swordState == HELD)
     SpriteRenderer* Renderer;      // Pointerul catre SpriteRenderer
 
     GLuint whiteTexture;
     GLuint bgTexture; //id for backgrounf picture
+    GLuint museumTexture; // museum scene background (with the C.A.T.Scan machine)
 
     // Datele pisicii
     glm::vec3 catPos;
@@ -49,6 +57,7 @@ private:
     float jumpStrength;
     bool catIsGrounded;
     float groundLevel;
+    float facingDir;   // +1 = facing right, -1 = facing left
 
     //datele SABIE
     GLuint swordTexture;
@@ -60,6 +69,7 @@ private:
     float swordSpeed;
     float swordMaxDistance;
     glm::vec3 swordStartPos; // sa stim unde se intoarce sabia
+    float swordDir;          // direction the sword was thrown: +1 right, -1 left
     //HELD-> SABIA LA PISICA -> SPace => Thrown -> MaxDstance => RETURNING => HELD
     enum SwordState { HELD, THROWN, RETURNING , GROUND}; //4 stari , la GROUND daca nu prindem sabia, pica pe jos si mergem sa o luam
     SwordState swordState;
@@ -71,6 +81,31 @@ private:
     float enemyHealth ;
     bool enemyAlive;
     float enemyTimer;
+
+    // BOSS (mounted commander) - patrols left<->right in the painting
+    GLuint bossTexture;
+    glm::vec3 bossPos;
+    glm::vec2 bossSize;
+    float bossSpeed;
+    float bossDir;            // +1 moving right, -1 moving left
+    float bossMaxHealth;
+    float bossHealth;
+    bool bossAlive;
+    glm::vec3 lancePos;       // lance hitbox (attached in front of the boss)
+    glm::vec2 lanceSize;
+    void DrawBoss();
+
+    // SCENE / STORY
+    Scene currentScene;              // which scene we are in (museum / painting)
+    glm::vec3 machinePos;            // invisible hitbox for the C.A.T.Scan machine (drawn in the background art)
+    glm::vec2 machineSize;
+
+    // PUZZLE PIECE (collectible fragment in the painting)
+    GLuint puzzleTexture;
+    glm::vec3 puzzlePos;             // its base/anchor position
+    glm::vec2 puzzleSize;
+    bool puzzleCollected;            // true once the cat picks it up
+    float puzzleTimer;               // grows over time, drives the bob + spin
 
 
 };

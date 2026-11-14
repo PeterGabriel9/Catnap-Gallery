@@ -1,4 +1,4 @@
-/home/cris/Documents/Catnap-Official/build/CMakeFiles/ACG_Lab4.dir
-/home/cris/Documents/Catnap-Official/build/CMakeFiles/run.dir
-/home/cris/Documents/Catnap-Official/build/CMakeFiles/edit_cache.dir
-/home/cris/Documents/Catnap-Official/build/CMakeFiles/rebuild_cache.dir
+/home/peter/Documents/Catnap-Gallery-repo/build/CMakeFiles/ACG_Lab4.dir
+/home/peter/Documents/Catnap-Gallery-repo/build/CMakeFiles/run.dir
+/home/peter/Documents/Catnap-Gallery-repo/build/CMakeFiles/edit_cache.dir
+/home/peter/Documents/Catnap-Gallery-repo/build/CMakeFiles/rebuild_cache.dir

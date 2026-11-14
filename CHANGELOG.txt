@@ -1,0 +1,82 @@
+CATNAP GALLERY - Change Log (features added / modified)
+=======================================================
+
+ASSETS / PROJECT STRUCTURE
+- assets/ folder
+    All textures moved into a single assets/ folder.
+    CMakeLists.txt now copies the whole assets/ folder next to the
+    executable (one rule instead of one-per-file).
+- runcat.sh
+    Build + run script. Forces X11 on Wayland so GLEW starts.
+    Usage: ./runcat.sh
+
+CAT (MEOW)
+- New sprites
+    Cat_idle_first_frame.png          -> cat with NO sword
+    Cat_idle_with_sword_first_frame.png -> cat HOLDING the sword
+    Render() swaps between them based on swordState (HELD = with sword).
+- Double-jump fix
+    ProcessInput(): SPACE now checks "&& catIsGrounded", so she can
+    only jump when on the ground (no infinite mid-air jumps).
+- Higher jump
+    jumpStrength raised to 2.8 (constructor).
+- Facing direction / flip
+    facingDir variable (+1 right, -1 left), set on A/D.
+    Render() flips the cat by drawing with a negative X size.
+
+SWORD (BOOMERANG)
+- New texture
+    sword-Photoroom.png (transparent, replaces old sword.png).
+- Directional throw
+    swordDir stored at throw time from facingDir.
+    THROWN flies in swordDir; RETURNING flies back the other way.
+    Max-distance check uses fabs() so it works left OR right.
+- Lands on the floor
+    GROUND state now stops the dropped sword at groundLevel
+    (same floor as the cat) instead of the bottom of the screen.
+
+SCENES / STORY
+- Scene enum: SCENE_MUSEUM, SCENE_PAINTING + currentScene variable.
+- Game starts in the museum (lab_background.jpg) which contains the
+  painted C.A.T.Scan machine.
+- Press E near the machine (proximity via CheckCollision with an
+  invisible machinePos/machineSize hitbox) -> switch to the painting.
+- Painting scene uses background_paiting_battle_1.jpeg.
+- Render() and Update() branch on currentScene (different background,
+  enemy/boss only active in the painting).
+
+PUZZLE PIECE (collectible fragment - painting scene)
+- New texture: puzzle-piece.png.
+- Complex animation:
+    bob  = sin(puzzleTimer) added to Y position (up/down wobble)
+    flip = cos(puzzleTimer) scaling the X size (coin-flip on its axis)
+- Collected when the cat walks into it (CheckCollision) -> disappears,
+  prints "Fragment collected!".
+
+BOSS (mounted commander - painting scene)
+- New texture: boss_fight-Photoroom.png (cat on horse with lance).
+- Replaces the old primitive enemy (DrawEnemy() commented out, kept).
+- Patrols left<->right, bouncing at +/-0.7 (bossDir flips at edges).
+- Flips to face his movement direction (negative X size).
+- Has health (bossHealth). Thrown sword hits him -> -34 HP ->
+  defeated at 0 ("Boss invins! Ai castigat!").
+- lancePos/lanceSize: invisible hitbox kept in front of him
+  (will damage Meow later once she has HP).
+
+STAND ON BOSS HEAD
+- In Update(): if the cat is falling and overlaps the top of the boss,
+  she snaps onto his head (feet at head height), stops falling, and is
+  marked grounded so she can jump off. Lets her ride him as a moving
+  platform.
+
+KEY FUNCTIONS (quick reference)
+- Game::Init()        loads all textures once, sets up shaders/renderer.
+- Game::ProcessInput() reads keys: A/D move+face, SPACE jump, E enter
+                       painting, right-click throw sword.
+- Game::Update(dt)    gravity/jump, head-landing, sword state machine,
+                       puzzle piece, boss patrol + sword damage.
+- Game::Render()      draws per-scene background, cat (flipped/swapped),
+                       sword, puzzle piece, boss.
+- Game::CheckCollision() AABB rectangle overlap test (used everywhere).
+- Game::DrawBoss()    draws the boss, flipped to face his direction.
+- Game::DrawEnemy()   old primitive enemy (no longer called).

@@ -1,8 +1,8 @@
 CMakeFiles/ACG_Lab4.dir/Source/Globals/globals.cpp.o: \
- /home/cris/Documents/Catnap-Official/Source/Globals/globals.cpp \
+ /home/peter/Documents/Catnap-Gallery-repo/Source/Globals/globals.cpp \
  /usr/include/stdc-predef.h \
- /home/cris/Documents/Catnap-Official/Source/Globals/globals.hpp \
- /usr/include/GL/glew.h /usr/include/c++/15/cstddef \
+ /home/peter/Documents/Catnap-Gallery-repo/Source/Globals/globals.hpp \
+ /usr/include/x86_64-linux-gnu/GL/glew.h /usr/include/c++/15/cstddef \
  /usr/include/x86_64-linux-gnu/c++/15/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/15/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \

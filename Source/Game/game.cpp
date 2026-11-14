@@ -5,6 +5,7 @@
 #include "../Shaders/Utils/shaderLoader.hpp"
 #include <iostream>
 #include <cstring>
+#include <cmath>
 
 Game::Game(unsigned int width, unsigned int height) {
     Width = width;
@@ -18,8 +19,9 @@ Game::Game(unsigned int width, unsigned int height) {
     speed = 0.5f;
     velocityY = 0.0f;
     gravity = -4.0f;            // forța care trage în jos (cu minus)
-    jumpStrength = 1.6f;        // puterea saltului în sus
+    jumpStrength = 2.8f;        // puterea saltului în sus (marita: sare mai sus)
     catIsGrounded = true;          // la început stă pe pământ
+    facingDir = 1.0f;              // starts facing right
     
 
     swordPos = glm::vec3(catPos.x + catSize.x* 0.5f, catPos.y, 0.0f);
@@ -28,6 +30,7 @@ Game::Game(unsigned int width, unsigned int height) {
     swordMaxDistance = 0.8f;
     swordRotationAngle = 45.0f;
     swordState = HELD;
+    swordDir = 1.0f;   // default throw direction
 
     //ENEMY info
     enemyPos = glm::vec3(0.7f, 0.0f, 0.0f);       
@@ -36,6 +39,27 @@ Game::Game(unsigned int width, unsigned int height) {
     enemyHealth = 100.0f;
     enemyTimer = 0.0f;
     enemyAlive = true;
+
+    // BOSS info (mounted commander in the painting)
+    bossPos = glm::vec3(0.5f, groundLevel + 0.15f, 0.0f);  // sits a bit above the floor (he's tall on a horse)
+    bossSize = glm::vec2(0.85f, 0.85f);
+    bossSpeed = 0.3f;
+    bossDir = -1.0f;            // starts moving left
+    bossMaxHealth = 100.0f;
+    bossHealth = 100.0f;
+    bossAlive = true;
+    lanceSize = glm::vec2(0.25f, 0.1f);   // lance hitbox in front of him
+
+    // SCENE / STORY info
+    currentScene = SCENE_MUSEUM;              // start in the museum
+    machinePos = glm::vec3(-0.68f, -0.35f, 0.0f);  // over the painted C.A.T.Scan (left side, on the desk)
+    machineSize = glm::vec2(0.3f, 0.4f);
+
+    // PUZZLE PIECE info (in the painting scene)
+    puzzlePos = glm::vec3(0.4f, 0.1f, 0.0f);  // floating in the battlefield
+    puzzleSize = glm::vec2(0.18f, 0.18f);
+    puzzleCollected = false;
+    puzzleTimer = 0.0f;
 
 
     Renderer = nullptr;
@@ -65,7 +89,7 @@ void Game::Init() {
     // cat.png load
     stbi_set_flip_vertically_on_load(true);
     int w, h, nrChannels;
-    unsigned char* data = stbi_load("cat.png", &w, &h, &nrChannels, 4);
+    unsigned char* data = stbi_load("assets/Cat_idle_first_frame.png", &w, &h, &nrChannels, 4);
 
     glGenTextures(1, &texture);
     glBindTexture(GL_TEXTURE_2D, texture);
@@ -83,7 +107,23 @@ void Game::Init() {
     stbi_image_free(data);
 
 
-    unsigned char* swordData = stbi_load("sword.png", &w, &h, &nrChannels, 4);
+    // cat-with-sword image (shown when the sword is HELD)
+    unsigned char* catSwordData = stbi_load("assets/Cat_idle_with_sword_first_frame.png", &w, &h, &nrChannels, 4);
+    glGenTextures(1, &catSwordTexture);
+    glBindTexture(GL_TEXTURE_2D, catSwordTexture);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+    if (catSwordData) {
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, catSwordData);
+        glGenerateMipmap(GL_TEXTURE_2D);
+        std::cout << "Cat-with-sword loaded! " << w << "x" << h << std::endl;
+    } else {
+        std::cout << "EROARE: Cat_idle_with_sword nu a fost gasita!" << std::endl;
+    }
+    stbi_image_free(catSwordData);
+
+
+    unsigned char* swordData = stbi_load("assets/sword-Photoroom.png", &w, &h, &nrChannels, 4);
     glGenTextures(1, &swordTexture);
     glBindTexture(GL_TEXTURE_2D, swordTexture);
 
@@ -108,7 +148,7 @@ void Game::Init() {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
 
-     unsigned char* bgData = stbi_load("background.png", &w, &h, &nrChannels, 4);
+     unsigned char* bgData = stbi_load("assets/background_paiting_battle_1.jpeg", &w, &h, &nrChannels, 4);
     glGenTextures(1, &bgTexture);
     glBindTexture(GL_TEXTURE_2D, bgTexture);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
@@ -126,6 +166,54 @@ void Game::Init() {
     stbi_image_free(bgData);
 
 
+    // museum scene background (contains the painted C.A.T.Scan machine)
+    unsigned char* museumData = stbi_load("assets/lab_background.jpg", &w, &h, &nrChannels, 4);
+    glGenTextures(1, &museumTexture);
+    glBindTexture(GL_TEXTURE_2D, museumTexture);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    if (museumData) {
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, museumData);
+        glGenerateMipmap(GL_TEXTURE_2D);
+        std::cout << "Museum background loaded! " << w << "x" << h << std::endl;
+    } else {
+        std::cout << "EROARE: lab_background.jpg nu a fost gasita!" << std::endl;
+    }
+    stbi_image_free(museumData);
+
+
+    // puzzle piece (collectible fragment)
+    unsigned char* puzzleData = stbi_load("assets/puzzle-piece.png", &w, &h, &nrChannels, 4);
+    glGenTextures(1, &puzzleTexture);
+    glBindTexture(GL_TEXTURE_2D, puzzleTexture);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+    if (puzzleData) {
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, puzzleData);
+        glGenerateMipmap(GL_TEXTURE_2D);
+        std::cout << "Puzzle piece loaded! " << w << "x" << h << std::endl;
+    } else {
+        std::cout << "EROARE: puzzle-piece.png nu a fost gasita!" << std::endl;
+    }
+    stbi_image_free(puzzleData);
+
+
+    // boss (mounted commander)
+    unsigned char* bossData = stbi_load("assets/boss_fight-Photoroom.png", &w, &h, &nrChannels, 4);
+    glGenTextures(1, &bossTexture);
+    glBindTexture(GL_TEXTURE_2D, bossTexture);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+    if (bossData) {
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, bossData);
+        glGenerateMipmap(GL_TEXTURE_2D);
+        std::cout << "Boss loaded! " << w << "x" << h << std::endl;
+    } else {
+        std::cout << "EROARE: boss_fight-Photoroom.png nu a fost gasita!" << std::endl;
+    }
+    stbi_image_free(bossData);
+
+
 }
 
 void Game::ProcessInput(float dt) {
@@ -137,15 +225,25 @@ void Game::ProcessInput(float dt) {
     // Tastele A, D, W, S
     if (Keys[GLFW_KEY_A]) {
         catPos.x -= speed * dt;
-        //swordPos = glm::vec3(catPos.x + catSize.x* 0.5f, catPos.y, 0.0f);
+        facingDir = -1.0f;   // now facing left
     }
     if (Keys[GLFW_KEY_D]) {
         catPos.x += speed * dt;
-        //swordPos = glm::vec3(catPos.x + catSize.x* 0.5f, catPos.y, 0.0f);
+        facingDir = 1.0f;    // now facing right
     }
-    if (Keys[GLFW_KEY_SPACE]) {
+    if (Keys[GLFW_KEY_SPACE] && catIsGrounded) {
         velocityY = jumpStrength;  // îi dă impulsul în sus
         catIsGrounded = false;
+    }
+
+    // STORY: press E near the C.A.T.Scan machine to jump into the painting
+    if (Keys[GLFW_KEY_E] && currentScene == SCENE_MUSEUM) {
+        // "near" = cat and machine overlap (proximity check)
+        if (CheckCollision(catPos, catSize, machinePos, machineSize)) {
+            currentScene = SCENE_PAINTING;   // poof -> into the painting!
+            catPos = glm::vec3(-0.5f, groundLevel, 0.0f);  // drop her back at the left
+            std::cout << "C.A.T.Scan activated! Jumping into the painting..." << std::endl;
+        }
     }
 
   /* if (Keys[GLFW_KEY_S]) {
@@ -155,11 +253,11 @@ void Game::ProcessInput(float dt) {
 
 
     //SWORD MOVEMENT
-    // the sword is thrown only if it is in state HELD and we press SPACE
+    // the sword is thrown only if it is in state HELD and we press right click
     if(Keys[GLFW_MOUSE_BUTTON_RIGHT] && swordState == HELD ){
         swordState= THROWN;
         swordStartPos  = catPos;
-
+        swordDir = facingDir;   // remember which way she was facing at throw time
         swordPos = catPos;
     }
      
@@ -191,6 +289,18 @@ void Game::Update(float dt) {
         velocityY = 0.0f;              // oprim căderea
         catIsGrounded = true;             // a aterizat, acum poate sări din nou!
     }
+
+    // land on the boss's head: if falling and above him while overlapping in X, stand on his head
+    if (currentScene == SCENE_PAINTING && bossAlive && velocityY <= 0.0f) {
+        float headY = bossPos.y + bossSize.y * 0.5f;              // top of the boss
+        bool overX = fabs(catPos.x - bossPos.x) < (catSize.x + bossSize.x) * 0.5f;
+        bool nearHead = catPos.y <= headY + 0.1f && catPos.y >= headY - 0.1f;
+        if (overX && nearHead) {
+            catPos.y = headY;           // stick her feet to his head
+            velocityY = 0.0f;
+            catIsGrounded = true;       // she can jump again from his head
+        }
+    }
     if(swordState == HELD) {
         swordPos = catPos;
         swordRotationAngle = 130.0f;
@@ -198,7 +308,7 @@ void Game::Update(float dt) {
         glm::vec2 drawSwordPos = glm::vec2(catPos.x + handOffset.x, catPos.y + handOffset.y);
 
 } else if(swordState == THROWN) {
-    swordPos.x += swordSpeed * dt;
+    swordPos.x += swordSpeed * swordDir * dt;   // fly in the thrown direction
     swordRotationAngle += 1080.0f * dt;
 
     if(enemyAlive && CheckCollision(swordPos, swordSize, enemyPos, enemySize)) {
@@ -214,29 +324,28 @@ void Game::Update(float dt) {
             std::cout << "Inamicul a fost distrus!" << std::endl;
             }
     }
-    //comgin back is it achives its maximum distance limit
-    if(swordPos.x >= swordStartPos.x + swordMaxDistance) {
+    //coming back once it has traveled its max distance (either direction)
+    if(fabs(swordPos.x - swordStartPos.x) >= swordMaxDistance) {
         swordState = RETURNING;
     }
 
 } else if(swordState == RETURNING) {
-    swordPos.x -= swordSpeed*dt;
+    swordPos.x -= swordSpeed * swordDir * dt;   // fly back toward the cat (opposite of throw)
     swordRotationAngle += 1080.0f *dt;
 
     //we catch the sword only if we move the cat such that we catch it 
      if (CheckCollision(swordPos, swordSize, catPos, catSize)) {
         swordState = HELD;
     }
-    //if ti goes past the cat by 0.3 unit we consider it dropped
-       if (swordPos.x < catPos.x - 0.3f) {
+    //if it goes past the cat by 0.3 unit (in the return direction) we consider it dropped
+       if (swordDir > 0.0f ? (swordPos.x < catPos.x - 0.3f) : (swordPos.x > catPos.x + 0.3f)) {
         swordState = GROUND;
     }
 }else if(swordState == GROUND) {
-    // the sowrd goes down (gravty) until it touches the floor
-      // consider floor at -0.85 and the sword stops there
-    swordPos.y -= 1.5f * dt;  
-    if (swordPos.y < -0.85f) {
-        swordPos.y = -0.85f;   
+    // the sword falls (gravity) until it rests on the floor where the cat walks
+    swordPos.y -= 1.5f * dt;
+    if (swordPos.y < groundLevel) {
+        swordPos.y = groundLevel;   // stop it on the ground, same level as the cat
     }
     // it s not rotating anymore and we cath it by going to it
     swordRotationAngle = 0.0f;
@@ -244,6 +353,39 @@ void Game::Update(float dt) {
         swordState = HELD;
     }
  }
+
+    // === PUZZLE PIECE (painting scene only) ===
+    if (currentScene == SCENE_PAINTING && !puzzleCollected) {
+        puzzleTimer += dt;   // clock used for the bob + spin animation
+
+        // collect it when the cat walks into it
+        if (CheckCollision(catPos, catSize, puzzlePos, puzzleSize)) {
+            puzzleCollected = true;
+            std::cout << "Fragment collected!" << std::endl;
+        }
+    }
+
+    // === BOSS (painting scene only) ===
+    if (currentScene == SCENE_PAINTING && bossAlive) {
+        // patrol left <-> right between screen edges
+        bossPos.x += bossSpeed * bossDir * dt;
+        if (bossPos.x > 0.7f)  bossDir = -1.0f;   // hit right edge -> go left
+        if (bossPos.x < -0.7f) bossDir = 1.0f;    // hit left edge -> go right
+
+        // lance hitbox sits in front of him (in the direction he's facing/moving)
+        lancePos = glm::vec3(bossPos.x + bossDir * (bossSize.x * 0.5f), bossPos.y, 0.0f);
+
+        // sword hits the boss -> damage him
+        if (swordState == THROWN && CheckCollision(swordPos, swordSize, bossPos, bossSize)) {
+            bossHealth -= 34.0f;
+            std::cout << "Boss lovit! Viata: " << bossHealth << std::endl;
+            swordState = RETURNING;
+            if (bossHealth <= 0.0f) {
+                bossAlive = false;
+                std::cout << "Boss invins! Ai castigat!" << std::endl;
+            }
+        }
+    }
 }
 
 void Game::DrawEnemy() {
@@ -272,27 +414,52 @@ void Game::DrawEnemy() {
 
 
 
+void Game::DrawBoss() {
+    if (!bossAlive) return;
+    // face the direction he is moving: art faces one way by default, flip with negative X size
+    glm::vec2 drawSize = glm::vec2(bossSize.x * -bossDir, bossSize.y);
+    Renderer->DrawSprite(bossTexture, glm::vec2(bossPos), drawSize, 0.0f, glm::vec3(1.0f, 1.0f, 1.0f));
+}
+
+
 void Game::Render() {
     glClear(GL_COLOR_BUFFER_BIT);
 
-    // DOAR O SINGURA LINIE PENTRU A DESENA!
-    // Parametri: textura, pozitia (X, Y), marimea, rotatia (0 grade), culoarea (alb)
-   
-    Renderer->DrawSprite(bgTexture, glm::vec2(0.0f, 0.0f), glm::vec2(2.0f, 2.0f), 0.0f, glm::vec3(1.0f, 1.0f, 1.0f));
-    Renderer->DrawSprite(texture, glm::vec2(catPos), catSize, 0.0f, glm::vec3(1.0f, 1.0f, 1.0f));
-   
-   glm::vec2 drawSwordPos = glm::vec2(swordPos);
-   float drawSwordAngle = swordRotationAngle;
+    // --- Background depends on the scene ---
+    if (currentScene == SCENE_MUSEUM) {
+        // museum art (the C.A.T.Scan machine is painted into this image, on the left)
+        Renderer->DrawSprite(museumTexture, glm::vec2(0.0f, 0.0f), glm::vec2(2.0f, 2.0f), 0.0f, glm::vec3(1.0f, 1.0f, 1.0f));
+    } else { // SCENE_PAINTING
+        // for now reuse the loaded background image (swap your painting art in later)
+        Renderer->DrawSprite(bgTexture, glm::vec2(0.0f, 0.0f), glm::vec2(2.0f, 2.0f), 0.0f, glm::vec3(1.0f, 1.0f, 1.0f));
+    }
 
+    // --- The cat + sword (same in both scenes) ---
+    // flip the cat horizontally by using a negative X size when facing left
+    glm::vec2 catDrawSize = glm::vec2(catSize.x * facingDir, catSize.y);
     if (swordState == HELD) {
-       drawSwordPos.x += catSize.x * 0.6f;  // offset in dreapta doar cand e tinuta  drawSwordPos.x = catPos.x + catSize.x * 0.25f;  // putin in fata (dreapta)
-        drawSwordPos.y = catPos.y + catSize.y * 0.1f;  // la inaltimea labutei
-        drawSwordAngle = 0.5f;                   
-   }
-    
-    Renderer->DrawSprite(swordTexture, drawSwordPos, swordSize, swordRotationAngle);
-    DrawEnemy();
-    
+        // Sword is in her hand -> draw the cat-with-sword image, and NO separate sword
+        Renderer->DrawSprite(catSwordTexture, glm::vec2(catPos), catDrawSize, 0.0f, glm::vec3(1.0f, 1.0f, 1.0f));
+    } else {
+        // Sword is thrown/flying/on the ground -> draw the plain cat AND the flying sword
+        Renderer->DrawSprite(texture, glm::vec2(catPos), catDrawSize, 0.0f, glm::vec3(1.0f, 1.0f, 1.0f));
+        Renderer->DrawSprite(swordTexture, glm::vec2(swordPos), swordSize, swordRotationAngle);
+    }
+
+    // --- Enemy only exists in the painting ---
+    if (currentScene == SCENE_PAINTING) {
+        // DrawEnemy();   // old primitive enemy (replaced by the boss)
+        DrawBoss();
+
+        // --- Puzzle piece: bob up/down (sin) + coin-flip on its axis (cos on X scale), until collected ---
+        if (!puzzleCollected) {
+            float bob = sin(puzzleTimer * 2.0f) * 0.08f;              // up/down wobble
+            float flip = cos(puzzleTimer * 5.0f);                     // +1 -> 0 -> -1 -> ... : coin flip
+            glm::vec2 drawPos = glm::vec2(puzzlePos.x, puzzlePos.y + bob);
+            glm::vec2 flipSize = glm::vec2(puzzleSize.x * flip, puzzleSize.y);  // X scale drives the flip
+            Renderer->DrawSprite(puzzleTexture, drawPos, flipSize, 0.0f, glm::vec3(1.0f, 1.0f, 1.0f));
+        }
+    }
 }
 
 void Game::OnScroll(double yoffset) {
