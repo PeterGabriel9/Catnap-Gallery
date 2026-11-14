@@ -131,6 +131,17 @@ if(IS_DIRECTORY "${CMAKE_SOURCE_DIR}/assets")
         COMMENT "Copying assets folder to runtime directory..."
     )
 endif()
+
+# heart.png lives at project root (used by the cat-health UI)
+if(EXISTS "${CMAKE_SOURCE_DIR}/heart.png")
+    add_custom_command(
+        TARGET ${PROJECT_NAME}
+        POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+                "${CMAKE_SOURCE_DIR}/heart.png" $<TARGET_FILE_DIR:${PROJECT_NAME}>
+        COMMENT "Copying heart.png to runtime directory..."
+    )
+endif()
 # Copy resources folder after build
 set(RESOURCES_DIR ${CMAKE_SOURCE_DIR}/Resources)
 

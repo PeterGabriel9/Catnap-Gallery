@@ -43,11 +43,13 @@ private:
     GLuint texture;
     GLuint catSwordTexture;   // Meow holding the sword (shown when swordState == HELD)
     SpriteRenderer* Renderer;      // Pointerul catre SpriteRenderer
-
+    GLuint heartTexture; 
     GLuint whiteTexture;
     GLuint bgTexture; //id for backgrounf picture
     GLuint museumTexture; // museum scene background (with the C.A.T.Scan machine)
 
+    //Camera
+   float cameraX;
     // Datele pisicii
     glm::vec3 catPos;
     glm::vec2 catSize;          
@@ -59,6 +61,13 @@ private:
     float groundLevel;
     float facingDir;   // +1 = facing right, -1 = facing left
 
+
+    //cat live
+    float catMaxHealth;
+    float catHealth;
+    float catHurtTimer; // imunitate cateva secunde ca ar moare instnat la cate frameuri sunt generate pe sec
+
+ 
     //datele SABIE
     GLuint swordTexture;
     glm::vec3 swordPos;
