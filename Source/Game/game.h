@@ -34,7 +34,10 @@ public:
 
     void DrawSword(glm::vec2 pos, float rotAngle);  
     void DrawEnemy(); 
-
+      void DrawBoss();
+    void DrawFramedPainting(glm::vec2 pos, glm::vec2 size);
+        void DrawMuseumGuard(glm::vec2 pos);
+    void DrawPuzzlePiece(glm::vec2 pos, float size);
     bool CheckCollision(glm::vec3 pos1, glm::vec2 size1, glm::vec3 pos2, glm::vec2 size2);      
     void OnScroll(double yoffSet);
 
@@ -44,9 +47,11 @@ private:
     GLuint catSwordTexture;   // Meow holding the sword (shown when swordState == HELD)
     SpriteRenderer* Renderer;      // Pointerul catre SpriteRenderer
 
+    float cameraX;
     GLuint whiteTexture;
     GLuint bgTexture; //id for backgrounf picture
     GLuint museumTexture; // museum scene background (with the C.A.T.Scan machine)
+    GLuint heartTexture;
 
     // Datele pisicii
     glm::vec3 catPos;
@@ -58,6 +63,9 @@ private:
     bool catIsGrounded;
     float groundLevel;
     float facingDir;   // +1 = facing right, -1 = facing left
+    float catMaxHealth;    // Viata maxima (6)
+    float catHealth;       // Viata curenta
+    float catHurtTimer;    // Timp de imunitate dupa ce este lovita
 
     //datele SABIE
     GLuint swordTexture;
@@ -91,9 +99,10 @@ private:
     float bossMaxHealth;
     float bossHealth;
     bool bossAlive;
+    float bossHurtTimer;
     glm::vec3 lancePos;       // lance hitbox (attached in front of the boss)
     glm::vec2 lanceSize;
-    void DrawBoss();
+ 
 
     // SCENE / STORY
     Scene currentScene;              // which scene we are in (museum / painting)

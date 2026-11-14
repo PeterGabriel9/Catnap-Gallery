@@ -15,6 +15,14 @@ dependency_available() {
         return 0
     fi
 
+    if [ -f "/usr/include/GLFW/glfw3.h" ] || [ -f "/usr/local/include/GLFW/glfw3.h" ]; then
+        return 0
+    fi
+
+    if command -v ldconfig >/dev/null 2>&1 && ldconfig -p 2>/dev/null | grep -q "libglfw"; then
+        return 0
+    fi
+
     return 1
 }
 
