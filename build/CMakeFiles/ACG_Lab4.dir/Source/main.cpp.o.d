@@ -1,5 +1,5 @@
 CMakeFiles/ACG_Lab4.dir/Source/main.cpp.o: \
- /home/peter/Documents/Catnap-Gallery-repo/Source/main.cpp \
+ /home/cris/Documents/Catnap-Official/Source/main.cpp \
  /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -162,15 +162,15 @@ CMakeFiles/ACG_Lab4.dir/Source/main.cpp.o: \
  /usr/include/c++/15/bits/locale_facets.tcc \
  /usr/include/c++/15/bits/basic_ios.tcc \
  /usr/include/c++/15/bits/ostream.tcc /usr/include/c++/15/istream \
- /usr/include/c++/15/bits/istream.tcc \
- /usr/include/x86_64-linux-gnu/GL/glew.h /usr/include/c++/15/cstdint \
+ /usr/include/c++/15/bits/istream.tcc /usr/include/GL/glew.h \
+ /usr/include/c++/15/cstdint \
  /usr/lib/gcc/x86_64-linux-gnu/15/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h /usr/include/GL/glu.h \
  /usr/include/GL/gl.h /usr/include/GLFW/glfw3.h \
- /home/peter/Documents/Catnap-Gallery-repo/Source/Game/game.h \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/glm.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/core/_fixes.hpp \
+ /home/cris/Documents/Catnap-Official/Source/Game/game.h \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/glm.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/core/_fixes.hpp \
  /usr/include/c++/15/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
@@ -204,71 +204,71 @@ CMakeFiles/ACG_Lab4.dir/Source/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
  /usr/include/x86_64-linux-gnu/bits/uio_lim.h /usr/include/c++/15/cfloat \
  /usr/lib/gcc/x86_64-linux-gnu/15/include/float.h \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/core/setup.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/core/setup.hpp \
  /usr/lib/gcc/x86_64-linux-gnu/15/include/emmintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/15/include/xmmintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/15/include/mmintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/15/include/mm_malloc.h \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/_detail.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/setup.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/_detail.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/setup.hpp \
  /usr/include/c++/15/cassert /usr/include/assert.h \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/_vectorize.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/type.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/type_half.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/type_half.inl \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/_detail.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/type_float.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/type_int.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/type_gentype.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/type_size.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/type_vec1.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/type_vec.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/_swizzle.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/_swizzle_func.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/type_vec1.inl \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/type_vec2.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/type_vec2.inl \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/type_vec3.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/type_vec3.inl \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/type_vec4.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/type_vec4.inl \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/type_mat2x2.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/type_mat.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/type_mat2x2.inl \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/type_mat2x3.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/type_mat2x3.inl \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/type_mat2x4.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/type_mat2x4.inl \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/type_mat3x2.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/type_mat3x2.inl \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/type_mat3x3.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/type_mat3x3.inl \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/type_mat3x4.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/type_mat3x4.inl \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/type_mat4x2.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/type_mat4x2.inl \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/type_mat4x3.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/type_mat4x3.inl \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/type_mat4x4.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/type_mat4x4.inl \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/func_trigonometric.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/func_trigonometric.inl \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/func_exponential.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/func_exponential.inl \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/func_common.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/_fixes.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/func_common.inl \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/func_packing.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/func_packing.inl \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/func_geometric.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/func_geometric.inl \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/func_matrix.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/func_matrix.inl \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/func_vector_relational.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/func_vector_relational.inl \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/func_integer.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/func_integer.inl \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/func_noise.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/func_noise.inl \
- /home/peter/Documents/Catnap-Gallery-repo/Dependencies/Include/glm/./core/_swizzle.hpp \
- /home/peter/Documents/Catnap-Gallery-repo/Source/Game/sprite_renderer.h
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/_vectorize.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/type.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/type_half.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/type_half.inl \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/_detail.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/type_float.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/type_int.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/type_gentype.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/type_size.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/type_vec1.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/type_vec.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/_swizzle.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/_swizzle_func.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/type_vec1.inl \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/type_vec2.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/type_vec2.inl \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/type_vec3.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/type_vec3.inl \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/type_vec4.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/type_vec4.inl \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/type_mat2x2.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/type_mat.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/type_mat2x2.inl \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/type_mat2x3.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/type_mat2x3.inl \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/type_mat2x4.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/type_mat2x4.inl \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/type_mat3x2.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/type_mat3x2.inl \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/type_mat3x3.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/type_mat3x3.inl \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/type_mat3x4.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/type_mat3x4.inl \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/type_mat4x2.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/type_mat4x2.inl \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/type_mat4x3.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/type_mat4x3.inl \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/type_mat4x4.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/type_mat4x4.inl \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/func_trigonometric.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/func_trigonometric.inl \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/func_exponential.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/func_exponential.inl \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/func_common.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/_fixes.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/func_common.inl \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/func_packing.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/func_packing.inl \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/func_geometric.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/func_geometric.inl \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/func_matrix.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/func_matrix.inl \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/func_vector_relational.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/func_vector_relational.inl \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/func_integer.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/func_integer.inl \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/func_noise.hpp \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/func_noise.inl \
+ /home/cris/Documents/Catnap-Official/Dependencies/Include/glm/./core/_swizzle.hpp \
+ /home/cris/Documents/Catnap-Official/Source/Game/sprite_renderer.h

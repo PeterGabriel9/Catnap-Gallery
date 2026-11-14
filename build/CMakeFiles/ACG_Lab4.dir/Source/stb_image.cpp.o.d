@@ -1,7 +1,7 @@
 CMakeFiles/ACG_Lab4.dir/Source/stb_image.cpp.o: \
- /home/peter/Documents/Catnap-Gallery-repo/Source/stb_image.cpp \
+ /home/cris/Documents/Catnap-Official/Source/stb_image.cpp \
  /usr/include/stdc-predef.h \
- /home/peter/Documents/Catnap-Gallery-repo/Source/stb_image.h \
+ /home/cris/Documents/Catnap-Official/Source/stb_image.h \
  /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
