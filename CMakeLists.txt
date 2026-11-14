@@ -126,9 +126,45 @@ if(IS_DIRECTORY "${CMAKE_SOURCE_DIR}/assets")
     add_custom_command(
         TARGET ${PROJECT_NAME}
         POST_BUILD
+<<<<<<< HEAD
         COMMAND ${CMAKE_COMMAND} -E copy_directory
                 "${CMAKE_SOURCE_DIR}/assets" "$<TARGET_FILE_DIR:${PROJECT_NAME}>/assets"
         COMMENT "Copying assets folder to runtime directory..."
+=======
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+                "${CMAKE_SOURCE_DIR}/cat.png" $<TARGET_FILE_DIR:${PROJECT_NAME}>
+        COMMENT "Copying cat.png to runtime directory..."
+    )
+endif()
+
+if(EXISTS "${CMAKE_SOURCE_DIR}/background.png")
+    add_custom_command(
+        TARGET ${PROJECT_NAME}
+        POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+                "${CMAKE_SOURCE_DIR}/background.png" $<TARGET_FILE_DIR:${PROJECT_NAME}>
+        COMMENT "Copying background.png to runtime directory..."
+    )
+endif()
+
+if(EXISTS "${CMAKE_SOURCE_DIR}/heart.png")
+    add_custom_command(
+        TARGET ${PROJECT_NAME}
+        POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+                "${CMAKE_SOURCE_DIR}/heart.png" $<TARGET_FILE_DIR:${PROJECT_NAME}>
+        COMMENT "Copying heart.png to runtime directory..."
+    )
+endif()
+
+if(EXISTS "${CMAKE_SOURCE_DIR}/sword.png")
+    add_custom_command(
+        TARGET ${PROJECT_NAME}
+        POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+                "${CMAKE_SOURCE_DIR}/sword.png" $<TARGET_FILE_DIR:${PROJECT_NAME}>
+        COMMENT "Copying sword.png to runtime directory..."
+>>>>>>> origin/main
     )
 endif()
 # Copy resources folder after build
